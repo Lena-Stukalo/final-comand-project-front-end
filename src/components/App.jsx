@@ -1,16 +1,16 @@
+import Spinner from "./Spinner/Spinner";
+import { List } from "redux/data/data";
+import { useSelector } from "react-redux";
+
 export const App = () => {
+
+
+   const loading = useSelector((state) => state.global.isLoading)
+ 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      {loading && <Spinner />}
+      <List/>
     </div>
   );
 };
