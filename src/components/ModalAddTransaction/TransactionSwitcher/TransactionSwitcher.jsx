@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import sprite from '../../../transactionsComponentIcons/sprite.svg';
-import { switcherOption } from 'transactionsComponentConstants/constants';
+import { switchersOptions } from 'transactionsComponentConstants/constants';
 
 function TransactionSwitcher({ check }) {
   const [checked, setChecked] = useState(false);
@@ -16,7 +16,7 @@ function TransactionSwitcher({ check }) {
   return (
     <Wrapper>
       <Span color={!checked ? '#E0E0E0' : '#24CCA7'}>
-        {switcherOption.income}
+        {switchersOptions.income}
       </Span>
       <input
         type="checkbox"
@@ -31,7 +31,7 @@ function TransactionSwitcher({ check }) {
         </Svg>
       </Switch>
       <Span color={checked ? '#E0E0E0' : '#ff6596'}>
-        {switcherOption.expense}
+        {switchersOptions.expense}
       </Span>
     </Wrapper>
   );
