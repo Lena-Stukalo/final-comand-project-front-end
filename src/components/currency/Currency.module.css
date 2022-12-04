@@ -1,0 +1,36 @@
+.CurrencyTable {
+  border-radius: 30px;
+  padding: 11px 19px 16px 19px;
+  margin: 10px;
+  background: #4a56e2;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-image: url(./Vector\ 7.svg),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 50px, #4a56e2 50px);
+  width: 280px;
+}
+
+.TableText {
+  font-family: 'Circe';
+  font-style: normal;
+  line-height: 1.5;
+  color: #ffffff;
+  padding: 5px;
+  text-align: left;
+}
+.headTableText {
+  font-weight: 700;
+  font-size: 18px;
+}
+.bodeyTableText {
+  font-weight: 400;
+  font-size: 16px;
+}
+.tableHead {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 11px 0;
+}
+.headRow {
+  border: none;
+}
