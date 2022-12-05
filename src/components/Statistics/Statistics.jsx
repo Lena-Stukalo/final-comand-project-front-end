@@ -65,7 +65,8 @@ const Statistics = () => {
 
     return (<div className={style.container}>
        
-        
+        <div className={style.wrapper}>
+            <div className={style.wrapperLeft}>
         <div className={style.navLink}>
         <Link><img src={homeImg} alt="home" /></Link>
         <Link className={style.link}><img src={chartImg} alt="chart" /></Link>
@@ -79,29 +80,24 @@ const Statistics = () => {
             />
             
             <p className={style.statisticValue}>₴ 24 000.00</p>
-        </div>
-      
-        <div className={style.wrapperMonth}>
+                </div>      
+            </div>    
+
+                 <div className={style.wrapperRight}>
+                <div className={style.wrappCalendar}>
+                     <div className={style.wrapperMonth}>
             <p>Month</p>
             <img src={arrow} alt=">" />
         </div>
         <div className={style.wrapperMonth}>
             <p>Year</p>
             <img src={arrow} alt=">" />
-        </div>
-
-      
+        </div>  
+                </div> 
         
        
         
-        {/* <div className={style.wrapperYear}>
-            <p>Category</p>
-            <p>Sum</p>
-        </div> */}
-        {/* <div className={style.wrapperCategory}>
-            <p>Category</p>
-            <p>Sum</p>
-        </div> */}
+      
         <ul className={style.statisticList}>{statistic.map(item => (<li key={id} className={style.statisticItems}>   
             
             <div style={{ backgroundColor: item.color }} className={style.itemsColor}></div>
@@ -118,8 +114,8 @@ const Statistics = () => {
             <p>{total}</p>
         </div>
         
-        
-       
+        </div>
+       </div>
     </div>)
 }
 
