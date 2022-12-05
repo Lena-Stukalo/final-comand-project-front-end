@@ -1,0 +1,154 @@
+body {   
+    font-family: Roboto, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+.container {
+    margin: 0 auto;
+    min-width: 320px;
+    background: rgb(165, 165, 197);    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.statisticTitle {
+    margin-top: 43px;
+    font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 45px;
+}
+
+.navLink {
+   
+    display: flex;
+    justify-content: center;
+}
+
+.wrapperMonth {
+    margin-top: 20px;
+    padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        height: 58px;
+        justify-content: space-between;
+        align-items: center;
+       background: rgba(255, 255, 255, 0.4);
+        border-radius: 30px;
+        border: 1px solid #000000;
+};
+
+/* .wrapperYear {
+    margin-top: 20px;
+    padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        height: 58px;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 30px;
+        border: 1px solid #000000;
+} */
+
+
+.statisticList {
+    margin-top: 18px;
+}
+.statisticItems {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #DCDCDF;
+        box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+        
+}
+.itemsColor {
+    display: flex;
+    width: 24px;
+    height: 24px;
+  
+}
+
+.link {
+    margin-left: 36px;
+}
+
+.categoryText {
+    margin-left: 16px;
+}
+
+.categorySum {
+    margin-left: auto;
+}
+
+.pieChart {
+       display: block;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+}
+
+.pieChartWrapper {
+    position: relative;
+    margin-top: 8px;
+}
+.statisticValue {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.expensesWrapper {
+    margin-top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.statisticTotalText {
+    font-family: 'Circe';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;   
+        color: #000000;
+}

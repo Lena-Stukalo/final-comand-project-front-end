@@ -1,5 +1,7 @@
+
 import Spinner from "./Spinner/Spinner";
-import { List } from "redux/data/data";
+import Statistics from "./Statistics/Statistics";
+// import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
 
 export const App = () => {
@@ -10,7 +12,8 @@ export const App = () => {
   return (
     <div>
       {loading && <Spinner />}
-      <List/>
+      <Statistics></Statistics>
+      {/* <List/> */}
     </div>
   );
 };
