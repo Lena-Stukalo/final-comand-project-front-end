@@ -46,11 +46,11 @@ const LoginForm = () => {
           icon={AiFillMail}
           mb={40}
           id={'email'}
-          value={formik.email}
+          // value={formik.email}
           onBlur={formik.handleBlur}
           onChangeText={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helper={formik.errors.email}
+          // error={formik.touched.email && Boolean(formik.errors.email)}
+          // helper={formik.errors.email}
         />
         <PasswordInput
           label={'Password'}

@@ -1,9 +1,9 @@
-import RegistrationForm from '../RegistrationForm';
-import styles from './register-container.module.css';
+import styles from './LoginContainerStyle.module.css';
+import LoginForm from '../LoginForms/LoginForm/LoginForm';
 import MainAppImage from '../../images/main-app-img.png';
 import MainAppImageDesktop from '../../images/main-app-desktop.png';
 
-const RegisterContainer = () => {
+const LoginContainer = () => {
   return (
     <section className={styles.container}>
       <div className={styles.title__box}>
@@ -19,9 +19,9 @@ const RegisterContainer = () => {
         />
         <h1 className={styles.app__title}>Finance App</h1>
       </div>
-      <RegistrationForm />
+      <LoginForm />;
     </section>
   );
 };
 
-export default RegisterContainer;
+export default LoginContainer;
