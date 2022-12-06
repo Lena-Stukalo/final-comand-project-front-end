@@ -65,13 +65,18 @@ const Statistics = () => {
 
     return (<div className={style.container}>
        
-        <div className={style.wrapper}>
-            <div className={style.wrapperLeft}>
+        {/* <div className={style.wrapper}> */}
+        <div className={style.wrapperLeft}>
+        
         <div className={style.navLink}>
         <Link><img src={homeImg} alt="home" /></Link>
         <Link className={style.link}><img src={chartImg} alt="chart" /></Link>
         <Link className={style.link}><img src={currencyImg} alt="currency" /></Link>
-        </div>
+            </div>
+            <div className={style.balanceWrapper}>
+            <p className={style.balanceTitle}>Ваш баланс</p>
+            <p className={style.balance}>₴ 24 000.00</p>
+            </div>
         <h2 className={style.statisticTitle}>Statistics</h2>
          <div className={style.pieChartWrapper}>
                <PieChart lineWidth={30} className={style.pieChart}
@@ -97,7 +102,7 @@ const Statistics = () => {
         
        
         
-      
+      <div>
         <ul className={style.statisticList}>{statistic.map(item => (<li key={id} className={style.statisticItems}>   
             
             <div style={{ backgroundColor: item.color }} className={style.itemsColor}></div>
@@ -105,7 +110,8 @@ const Statistics = () => {
             <p className={style.categorySum}>{item.value}</p>
         </li>))}
         </ul>
-        <div className={style.expensesWrapper}>
+            
+                <div className={style.expensesWrapper}>
             <p className={style.statisticTotalText}>Expenses:</p>
             <p>{total}</p>
         </div>
@@ -113,9 +119,10 @@ const Statistics = () => {
             <p className={style.statisticTotalText}>Income:</p>
             <p>{total}</p>
         </div>
+        </div>
         
         </div>
-       </div>
+       
     </div>)
 }
 
