@@ -13,3 +13,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.visually-hidden {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
