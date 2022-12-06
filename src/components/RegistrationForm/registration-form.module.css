@@ -103,13 +103,13 @@
 
 @media screen and (min-width: 768px) {
     .form__container {
-            padding: 107px 65px;
-            border: 1px solid green;
-            border-radius: 20px;
-            max-width: 533px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        padding: 107px 65px;
+        border: 1px solid green;
+        border-radius: 20px;
+        max-width: 533px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .register__button,
     .login__button {
