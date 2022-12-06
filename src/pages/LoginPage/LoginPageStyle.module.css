@@ -1,0 +1,14 @@
+.container {
+  width: 533px;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 40px 20px;
+  }
+}
