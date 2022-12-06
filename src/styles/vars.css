@@ -1,0 +1,32 @@
+:root {
+  /* colors */
+  --main-color: #4a56e2;
+  --secondary-color: #6e78e8;
+  --green-color: #24cca7;
+  --red-color: #ff6596;
+  --main-background-color: rgba(255, 255, 255, 0.4);
+  --secondary-background-color: #ffffff; /* header, modal, etc */
+
+  /* text colors */
+  --main-text-color: #000000;
+  --secondary-text-color: #ffffff;
+  --third-text-color: #4a56e2;
+
+  /* placeholder */
+  --placeholder-main-color: #bdbdbd; /* темно-серый */
+  --placeholder-secondary-color: #e0e0e0; /* светло-серый */
+  --placeholder-third-color: #a6a6a6; /* ваш баланс */
+
+  /* fonts */
+  --main-font: 'Circe', sans-serif;
+  --secondary-font: 'Segoeui', sans-serif;
+
+  /* breakpoints */
+  --response: 320px;
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1280px;
+
+  /* transaction */
+  --main-transaction: all 250ms ease;
+}
