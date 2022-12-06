@@ -1,6 +1,9 @@
-.main__image_desktop {
+.main__image_desktop,
+.main__image {
         display: none;
     }
+
+
 
 .app__title {
     margin: 0;
@@ -23,6 +26,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 50px;
+    }
+
+    .main__image {
+        display: block;
     }
 
 }

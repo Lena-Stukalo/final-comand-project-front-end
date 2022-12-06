@@ -22,18 +22,26 @@
 }
 
 .form__input {
-    width: 100%;
+    padding: 5px 30px;
+    height: 24px;
     border: none;
-    border-top: 1px solid #BDBDBD;
+    /* border-top: 1px solid #BDBDBD; */
 }
 
-
-.form__label {
-    display: block;
+.form__input::placeholder {
     color: #BDBDBD;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
+}
+
+
+
+.form__label {
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #BDBDBD;
+    
 }
 
 .form__label:not(:last-child) {
@@ -41,8 +49,8 @@
 }
 
 .icon {
-    vertical-align: middle;
-    margin-right: 22px;
+    position: absolute;
+    bottom: 5px;
 }
 
 .register__button {
@@ -107,6 +115,10 @@
     .login__button {
         width: 300px;
         height: 50px;
+    }
+
+    .form__input {
+        width: 100%;
     }
 
 }
