@@ -1,8 +1,10 @@
 
 import Spinner from "./Spinner/Spinner";
 import Statistics from "./Statistics/Statistics";
-// import { List } from "redux/data/data";
+import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
+import RegisterContainer from "./RegisterContainer";
+import Header from './Header';
 
 export const App = () => {
 
@@ -10,10 +12,15 @@ export const App = () => {
    const loading = useSelector((state) => state.global.isLoading)
  
   return (
-    <div>
+
+    <>
       {loading && <Spinner />}
       <Statistics></Statistics>
-      {/* <List/> */}
-    </div>
+      <List/>     
+      <RegisterContainer/>
+      <Header />
+    </>
+
+
   );
 };
