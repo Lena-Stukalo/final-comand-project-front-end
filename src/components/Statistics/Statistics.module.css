@@ -1,6 +1,5 @@
 body {   
-    font-family: Roboto, sans-serif;
-    background-color: rgb(198, 198, 233);
+    font-family: Roboto, sans-serif;    
     
 }
 
@@ -56,8 +55,22 @@ button {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
 
+    background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(25px);
+            background-image: url('./image/Rectangle3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+    }
+.navLinkSmall {
+
+    display: flex;
+    justify-content: center;
+}
+
+.navLinkMiddle {
+    display: none;
+}
         .wrapperMonth {
             margin: 0 auto;
             margin-top: 20px;
@@ -73,8 +86,46 @@ button {
             border: 1px solid #000000;
     
         }
-    
+    .balanceWrapper {
+        display: none;
+    }
+
+    .course {
+        display: none;
+    }
+
+    .wrapperCategory {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 280px;
+            height: 58px;
+            margin-top: 20px;     
+                  
+            background: #FFFFFF;
+            border-radius: 30px;
+
+    }
+
+    .categoryTextItem {
+        font-family: 'Circe';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.5;        
         
+        
+            color: #000000
+    }
+        .wrapperLeftDesctop {
+            display: none;
+        }
+
+        .wrapperRightDesctop {
+            display: none;
+        }
 }
 @media screen and (min-width: 768px) {
     .container {
@@ -85,6 +136,20 @@ button {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: start;
+
+            background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(25px);
+                background-image: url('./image/Rectangle2.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+        }
+                .navLinkSmall {
+                    display: none;
+                }
+        .navLinkMiddle {
+            display: block;
+           
         }
         .wrappCalendar {
             display: flex;
@@ -99,17 +164,25 @@ button {
        
         .wrapperRight {
             margin-left: auto;
+           
             display: flex;
             flex-direction: column;
             align-items: center;
            
         }
+
         .wrapperMonth {
             width: 160px;
+            /* margin-left: 16px; */
+        }
+
+        .wrapperYear {
             margin-left: 16px;
         }
 
         .balanceWrapper {
+            margin-top: 28px;
+            display: block;
             padding-left: 40px;
             width: 336px;
             height: 80px;
@@ -117,12 +190,12 @@ button {
             border-radius: 30px;
         }
         .balanceTitle {
-            margin-top: 8px;
+            padding-top: 8px;
             font-family: 'Circe';
             font-style: normal;
             font-weight: 400;
             font-size: 12px;
-            line-height: 18px;
+            line-height: 1.5;
             text-transform: uppercase;
             color: #A6A6A6;
 
@@ -130,13 +203,135 @@ button {
 
         .balance {
             margin-top: 12px;
-font-family: 'Poppins';
+          font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
-    line-height: 45px;  
+    line-height: 1.5;  
     color: #000000;
         }
+
+        .course {
+            position: relative;
+            width: 336px;
+                height: 182px;
+                display: flex;
+                justify-content: space-between; 
+                background-color: #4A56E2;
+                background-image: url('./image/Vector7.png');
+                background-repeat: no-repeat;    
+                background-size: contain;                
+                background-position: bottom;
+                                  
+                
+                border-radius: 30px;
+                padding-top: 11px;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                
+        }
+.course::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 376px;
+    height: 50px;
+    background-image: url('./image/Rectangle6.png');
+        background-repeat: no-repeat;
+        background-size: cover;        
+}
+                
+
+        .courseTextWrapper {
+            display: flex;
+            justify-content: space-around;
+            /* padding-left: 20px;
+            padding-right: 20px; */
+           
+            height: 50px;
+            background-color: #FFFFFF;
+                opacity: 0.2;
+                border-radius: 30px 30px 0px 0px;
+                background-position-y: top 50px red;
+                
+        }
+
+       .purchase {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       }
+        
+
+        .courseText {
+            
+        font-family: 'Circe';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.5; 
+        
+            color: #FFFFFF;
+                
+        }
+
+        .courseTextUsd{
+            margin-top: 28px;
+            font-family: 'Circe';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.5;
+                       
+            
+                color: #FFFFFF
+        }
+
+        .courseTextEur {
+            margin-top: 12px;
+            font-family: 'Circe';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.5;
+            
+            
+                color: #FFFFFF
+        }
+
+       .link {
+        
+        display: flex;
+        text-decoration: none;
+        align-items: center;       
+            
+       }
+
+       .linkChart {
+        margin-top: 21px;
+       }
+
+       .linkText {
+        font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.5;
+        
+            color: #000000;
+            padding-left: 23px;
+       }
+
+                .wrapperLeftDesctop {
+                    display: none;
+                }
+        
+                .wrapperRightDesctop {
+                    display: none;
+                }
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -148,16 +343,48 @@ font-family: 'Poppins';
         display: flex;
         /* flex-direction: row;
         justify-content: space-between; */
+
+        background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(25px);
+            background-image: url('./image/Rectangle1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
     }
 
+    .wrapperLeft {
+        display: none;
+    }
+         .wrapperRight {
+            display: none;
+         }
+         .wrapperLeftDesctop {
+             display: block;
+         }
+    
+         .wrapperRightDesctop {
+             display: block;
+             display: flex;
+         }
+.course {
+    width: 393px;
+        height: 331px;
+        margin-top: 32px;
+}
+
+.course::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 446px;
+    height: 50px;
+    background-image: url('./image/Rectangle6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 }
 
 
-
-/* .wrapper {
-    margin: 0 auto;
-    width: 320px;
-} */
 
 .statisticTitle {
     margin-top: 43px;
@@ -165,37 +392,11 @@ font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
-        line-height: 45px;
+        line-height: 1.5;
 }
 
-.navLink {
-   
-    display: flex;
-    justify-content: center;
-}
-
-/* .wrapperMonth {   
-    margin: 0 auto;
-    margin-top: 20px;
-    padding-left: 20px;
-        padding-right: 20px;
-        display: flex;
-        width: 280px;
-        height: 50px;
-        justify-content: space-between;
-        align-items: center;
-       background: rgba(255, 255, 255, 0.4);
-        border-radius: 30px;
-        border: 1px solid #000000;
-        
-}; */
-
-
-
-.statisticList {
-    
-    margin-top: 18px;
-    
+.statisticList {    
+    margin-top: 18px;    
 }
 .statisticItems {
     width: 280px;
@@ -259,6 +460,6 @@ font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
-        line-height: 24px;   
+        line-height: 1.5;   
         color: #000000;
 }

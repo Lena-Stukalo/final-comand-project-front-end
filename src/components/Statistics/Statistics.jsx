@@ -14,20 +14,7 @@ const Statistics = () => {
     
     
 
-    const id = nanoid()
-
-    // const statistic = [
-    //     { category: "Main expenses", sum: 8700, color: "#FED057" },        
-    //     { category: "Products", sum: 3800, color: "#FFD8D0", },
-    //     {category: "Car", sum: 1500, color: "#FD9498", },
-    //     {category: "Self care", sum: 800, color: "#C5BAFF", },
-    //     { category: "Child care", sum: 2200, color: "#6E78E8",  },
-    //     { category: "Household products", sum: 300, color: "#4A56E2",  },
-    //     { category: "Education", sum: 3400, color: "#81E1FF", },
-    //     { category: "Leisure", sum: 1230, color: "#24CCA7",  },
-    //     { category: "Other expenses", sum: 610, color:"#00AD84"  },
-        
-    // ]
+    const id = nanoid()  
 
 
     const statistic = [
@@ -44,22 +31,7 @@ const Statistics = () => {
 
     const total =  statistic.reduce((total, expenses) => {
   return total + expenses.value;
-}, 0);
-
-    
-    
-    // const colorList = [
-
-    //     "#FED057",
-    //     "#FFD8D0",
-    //     "#FD9498",
-    //     "#C5BAFF",
-    //     "#6E78E8",
-    //     "#4A56E2",
-    //     "#81E1FF",
-    //     "#24CCA7",
-    //     "#00AD84"
-    // ]
+}, 0);    
 
    
 
@@ -68,16 +40,22 @@ const Statistics = () => {
         {/* <div className={style.wrapper}> */}
         <div className={style.wrapperLeft}>
         
-        <div className={style.navLink}>
+        <div className={style.navLinkMiddle}>
+        <Link className={style.link} ><img width={18} height={18} src={homeImg} alt="home" /><p className={style.linkText}>Home</p></Link>
+        <Link className={`${style.link} ${style.linkChart}`}><img width={18} height={18} src={chartImg} alt="chart" /><p className={style.linkText}>Statistics</p></Link>
+        
+            </div>
+            <div className={style.navLinkSmall}>
         <Link><img src={homeImg} alt="home" /></Link>
         <Link className={style.link}><img src={chartImg} alt="chart" /></Link>
-        <Link className={style.link}><img src={currencyImg} alt="currency" /></Link>
+        <Link className={`${style.link} ${style.linkCurrency}`}><img src={currencyImg} alt="currency" /></Link>
             </div>
             <div className={style.balanceWrapper}>
             <p className={style.balanceTitle}>Ваш баланс</p>
             <p className={style.balance}>₴ 24 000.00</p>
             </div>
-        <h2 className={style.statisticTitle}>Statistics</h2>
+            <div>
+                <h2 className={style.statisticTitle}>Statistics</h2>
          <div className={style.pieChartWrapper}>
                <PieChart lineWidth={30} className={style.pieChart}
             data={statistic}
@@ -85,21 +63,48 @@ const Statistics = () => {
             />
             
             <p className={style.statisticValue}>₴ 24 000.00</p>
-                </div>      
+                </div>  
+            </div>    
             </div>    
 
-                 <div className={style.wrapperRight}>
+        <div className={style.wrapperRight}>
+            <div className={style.course}>
+                <div className={style.currency}>
+                    <p className={style.courseText}>Currency</p>
+                    <p className={style.courseTextUsd}>USD</p>
+                    <p className={style.courseTextEur}>EUR</p>
+                </div>
+
+                <div className={style.purchase}> 
+                    <p className={style.courseText}>Purchase</p>
+                    <p className={style.courseTextUsd}>27.55</p>
+                    <p className={style.courseTextEur}>30.00</p>
+                </div>
+
+                <div>
+                    <p className={style.courseText}>Sale</p>
+                    <p className={style.courseTextUsd}>27.65</p>
+                    <p className={style.courseTextEur}>30.10</p>
+                </div>                
+                
+            </div>
                 <div className={style.wrappCalendar}>
                      <div className={style.wrapperMonth}>
             <p>Month</p>
             <img src={arrow} alt=">" />
         </div>
-        <div className={style.wrapperMonth}>
+        <div className={`${style.wrapperMonth} ${style.wrapperYear}`}>
             <p>Year</p>
             <img src={arrow} alt=">" />
         </div>  
                 </div> 
-        
+
+                      <div className={style.wrapperCategory}>
+            <p className={style.categoryTextItem}>Category</p>
+            <p className={style.categoryTextItem}>Sum</p>
+        </div>   
+
+            
        
         
       <div>
@@ -122,7 +127,97 @@ const Statistics = () => {
         </div>
         
         </div>
+
+        <div className={style.wrapperLeftDesctop}>
+            <div className={style.navLinkMiddle}>
+        <Link className={style.link} ><img width={18} height={18} src={homeImg} alt="home" /><p className={style.linkText}>Home</p></Link>
+        <Link className={`${style.link} ${style.linkChart}`}><img width={18} height={18} src={chartImg} alt="chart" /><p className={style.linkText}>Statistics</p></Link>
+        
+            </div>
+            <div className={style.navLinkSmall}>
+        <Link><img src={homeImg} alt="home" /></Link>
+        <Link className={style.link}><img src={chartImg} alt="chart" /></Link>
+        <Link className={`${style.link} ${style.linkCurrency}`}><img src={currencyImg} alt="currency" /></Link>
+            </div>
+            <div className={style.balanceWrapper}>
+            <p className={style.balanceTitle}>Ваш баланс</p>
+            <p className={style.balance}>₴ 24 000.00</p>
+            </div>
+        
+            <div className={style.course}>
+                <div className={style.currency}>
+                    <p className={style.courseText}>Currency</p>
+                    <p className={style.courseTextUsd}>USD</p>
+                    <p className={style.courseTextEur}>EUR</p>
+                </div>
+
+                <div className={style.purchase}> 
+                    <p className={style.courseText}>Purchase</p>
+                    <p className={style.courseTextUsd}>27.55</p>
+                    <p className={style.courseTextEur}>30.00</p>
+                </div>
+
+                <div>
+                    <p className={style.courseText}>Sale</p>
+                    <p className={style.courseTextUsd}>27.65</p>
+                    <p className={style.courseTextEur}>30.10</p>
+                </div>                
+                
+            </div>
+
+        </div>
+
+        <div className={style.wrapperRightDesctop}>
+             <div>
+                <h2 className={style.statisticTitle}>Statistics</h2>
+         <div className={style.pieChartWrapper}>
+               <PieChart lineWidth={30} className={style.pieChart}
+            data={statistic}
+            
+            />
+            
+            <p className={style.statisticValue}>₴ 24 000.00</p>
+                </div>  
+            </div>
+            <div>
+          <div className={style.wrappCalendar}>
+                     <div className={style.wrapperMonth}>
+            <p>Month</p>
+            <img src={arrow} alt=">" />
+        </div>
+        <div className={`${style.wrapperMonth} ${style.wrapperYear}`}>
+            <p>Year</p>
+            <img src={arrow} alt=">" />
+        </div>  
+                </div> 
+
+                      <div className={style.wrapperCategory}>
+            <p className={style.categoryTextItem}>Category</p>
+            <p className={style.categoryTextItem}>Sum</p>
+        </div>              
        
+        
+      <div>
+        <ul className={style.statisticList}>{statistic.map(item => (<li key={id} className={style.statisticItems}>   
+            
+            <div style={{ backgroundColor: item.color }} className={style.itemsColor}></div>
+            <p className={style.categoryText}>{item.title}</p>
+            <p className={style.categorySum}>{item.value}</p>
+        </li>))}
+        </ul>
+            
+                <div className={style.expensesWrapper}>
+            <p className={style.statisticTotalText}>Expenses:</p>
+            <p>{total}</p>
+        </div>
+        <div className={style.expensesWrapper}>
+            <p className={style.statisticTotalText}>Income:</p>
+            <p>{total}</p>
+        </div>
+        </div>
+            
+        </div>
+       </div>
     </div>)
 }
 
