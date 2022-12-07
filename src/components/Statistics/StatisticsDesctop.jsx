@@ -9,29 +9,9 @@ import arrow from "./image/Vector.png"
 
  const id = nanoid()  
 
-
-    const statistic = [
-    { title: "Main expenses", value: 8700, color: "#FED057" },        
-        { title: "Products", value: 3800, color: "#FFD8D0"},
-        {title: "Car", value: 1500, color: "#FD9498" },
-        {title: "Self care", value: 800, color: "#C5BAFF" },
-        { title: "Child care", value: 2200, color: "#6E78E8" },
-        { title: "Household products", value: 300, color: "#4A56E2"  },
-        { title: "Education", value: 3400, color: "#81E1FF" },
-        { title: "Leisure", value: 1230, color: "#24CCA7"  },
-        { title: "Other expenses", value: 610, color: "#00AD84" },
-  ]
-
-    const total =  statistic.reduce((total, expenses) => {
-  return total + expenses.value;
-}, 0);    
-
-
-
-
-
-const StatisticsDesctop = () => {
-    <>
+const StatisticsDesctop = ({statistic, total}) => {
+    return (
+        <>
          <div className={style.wrapperLeftDesctop}>
             <div className={style.navLinkMiddle}>
         <Link className={style.link} ><img width={18} height={18} src={homeImg} alt="home" /><p className={style.linkText}>Home</p></Link>
@@ -123,6 +103,7 @@ const StatisticsDesctop = () => {
         </div>
        </div>
     </>
+   )
 }
 
  export default StatisticsDesctop;

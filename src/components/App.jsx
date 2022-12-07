@@ -1,11 +1,12 @@
 
 import Spinner from "./Spinner/Spinner";
-// import Statistics from "./Statistics/Statistics";
 // import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
 import RegisterContainer from "./RegisterContainer";
 import Header from './Header';
-import Statistics from "./Statistics2/Statistics";
+import Statistics from "./Statistics/Statistics" 
+
+// import StatisticsDesctop from "./Statistics2/StatisticsDesctop";
 
 export const App = () => {
 
@@ -16,7 +17,8 @@ export const App = () => {
 
     <>
       {loading && <Spinner />}
-      <Statistics/>
+      <Statistics />
+      {/* <StatisticsDesctop/> */}
       {/* <List/>      */}
       {/* <RegisterContainer/>
       <Header /> */}
