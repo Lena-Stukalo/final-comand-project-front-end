@@ -6,7 +6,7 @@ import RegisterContainer from "./RegisterContainer";
 import Header from './Header';
 import Statistics from "./Statistics/Statistics" 
 
-// import StatisticsDesctop from "./Statistics2/StatisticsDesctop";
+
 
 export const App = () => {
 
@@ -18,7 +18,7 @@ export const App = () => {
     <>
       {loading && <Spinner />}
       <Statistics />
-      {/* <StatisticsDesctop/> */}
+      
       {/* <List/>      */}
       {/* <RegisterContainer/>
       <Header /> */}
