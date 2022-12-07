@@ -21,11 +21,26 @@
     margin-left: 15px;
 }
 
+.form__error {
+    width: 90%;
+    padding: 5px 0px 5px 30px;
+    height: 24px;
+    border: 1px solid red;
+}
+
 .form__input {
-    padding: 5px 30px;
+    padding: 5px 0px 5px 30px;
+    width: 90%;
     height: 24px;
     border: none;
-    /* border-top: 1px solid #BDBDBD; */
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
 }
 
 .form__input::placeholder {
@@ -90,7 +105,6 @@
 @media screen and (min-width: 480px) {
     .form__container {
         padding: 107px 20px;
-        border: 1px solid green;
         border-radius: 20px;
         width: 430px;
         margin-left: auto;
@@ -104,7 +118,6 @@
 @media screen and (min-width: 768px) {
     .form__container {
         padding: 107px 65px;
-        border: 1px solid green;
         border-radius: 20px;
         max-width: 533px;
         margin-left: auto;

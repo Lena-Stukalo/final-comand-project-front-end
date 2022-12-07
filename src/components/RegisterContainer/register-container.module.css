@@ -3,9 +3,8 @@
         display: none;
     }
 
-
-
 .app__title {
+    display: none;
     margin: 0;
 }
 
@@ -29,6 +28,10 @@
     }
 
     .main__image {
+        display: block;
+    }
+
+    .app__title {
         display: block;
     }
 
