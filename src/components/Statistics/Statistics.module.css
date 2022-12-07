@@ -62,10 +62,20 @@ button {
             background-repeat: no-repeat;
             background-size: cover;
     }
+
+    .statisticTitle {
+        margin-top: 43px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 1.5;
+    }
 .navLinkSmall {
 
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .navLinkMiddle {
@@ -77,7 +87,7 @@ button {
             padding-left: 20px;
             padding-right: 20px;
             display: flex;
-            width: 280px;
+            /* width: 240px; */
             height: 50px;
             justify-content: space-between;
             align-items: center;
@@ -86,6 +96,21 @@ button {
             border: 1px solid #000000;
     
         }
+
+                .wrapperCategory {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    /* width: 240px; */
+                    height: 58px;
+                    margin-top: 20px;
+        
+                    background: #FFFFFF;
+                    border-radius: 30px;
+        
+                }
     .balanceWrapper {
         display: none;
     }
@@ -94,20 +119,7 @@ button {
         display: none;
     }
 
-    .wrapperCategory {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 15px;
-        padding-right: 15px;
-        width: 280px;
-            height: 58px;
-            margin-top: 20px;     
-                  
-            background: #FFFFFF;
-            border-radius: 30px;
-
-    }
+    
 
     .categoryTextItem {
         font-family: 'Circe';
@@ -126,6 +138,78 @@ button {
         .wrapperRightDesctop {
             display: none;
         }
+
+                .statisticList {
+                    margin-top: 18px;
+                }
+        
+                .statisticItems {
+                    width: 280px;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid #DCDCDF;
+                    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+        
+                }
+        
+                .itemsColor {
+                    display: flex;
+                    width: 24px;
+                    height: 24px;
+        
+                }
+        
+                .link {
+                    margin-left: 36px;
+                }
+        
+                .categoryText {
+                    margin-left: 16px;
+                }
+        
+                .categorySum {
+                    margin-left: auto;
+                }
+        
+                .pieChart {
+                    display: block;
+                    margin: 0 auto;
+                    width: 280px;
+                    height: 280px;
+                }
+        
+                .pieChartWrapper {
+                    position: relative;
+                    margin-top: 8px;
+                }
+        
+                .statisticValue {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%)
+                }
+        
+                .expensesWrapper {
+                    margin-top: 16px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+        
+                .statisticTotalText {
+                    font-family: 'Circe';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: #000000;
+                }
 }
 @media screen and (min-width: 768px) {
     .container {
@@ -149,7 +233,13 @@ button {
                 }
         .navLinkMiddle {
             display: block;
+            margin-top: 40px;
            
+        }
+
+        .pieChart {
+            width: 336px;
+            height: 336px;
         }
         .wrappCalendar {
             display: flex;
@@ -172,7 +262,7 @@ button {
         }
 
         .wrapperMonth {
-            width: 160px;
+            width: 120px;
             /* margin-left: 16px; */
         }
 
@@ -213,7 +303,8 @@ button {
 
         .course {
             position: relative;
-            width: 336px;
+            margin-top: 32px;
+            width: 294px;
                 height: 182px;
                 display: flex;
                 justify-content: space-between; 
@@ -264,6 +355,12 @@ button {
         align-items: center;
        }
         
+       .wrapperCategory {
+        width: 294px;
+        height: 58px;
+        padding-left: 20px;
+        padding-right: 20px;
+       }
 
         .courseText {
             
@@ -365,6 +462,27 @@ button {
              display: block;
              display: flex;
          }
+
+                   .wrapperMonth {
+                       width: 142px;
+                       /* margin-left: 16px; */
+                   }
+        
+                   .wrapperYear {
+                       margin-left: 32px;
+                   }
+
+                  .pieChart {
+                      width: 288px;
+                      height: 288px;
+                  }
+
+                  .wrapperCategory {
+                    width: 355px;
+                    height: 58px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
 .course {
     width: 393px;
         height: 331px;
@@ -382,20 +500,32 @@ button {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
+.wrapperCalendar {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.statisticTitle {
+    margin-top: 32px;
+}
 }
 
 
 
-.statisticTitle {
+/* .statisticTitle {
     margin-top: 43px;
     font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
         line-height: 1.5;
-}
+} */
 
-.statisticList {    
+/* .statisticList {    
     margin-top: 18px;    
 }
 .statisticItems {
@@ -462,4 +592,4 @@ button {
         font-size: 16px;
         line-height: 1.5;   
         color: #000000;
-}
+} */

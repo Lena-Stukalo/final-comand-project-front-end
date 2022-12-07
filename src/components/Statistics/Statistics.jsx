@@ -168,7 +168,7 @@ const Statistics = () => {
         </div>
 
         <div className={style.wrapperRightDesctop}>
-             <div>
+             <div className={style.statisticWrapper}>
                 <h2 className={style.statisticTitle}>Statistics</h2>
          <div className={style.pieChartWrapper}>
                <PieChart lineWidth={30} className={style.pieChart}
@@ -179,7 +179,7 @@ const Statistics = () => {
             <p className={style.statisticValue}>₴ 24 000.00</p>
                 </div>  
             </div>
-            <div>
+            <div className={style.wrapperCalendar}>
           <div className={style.wrappCalendar}>
                      <div className={style.wrapperMonth}>
             <p>Month</p>
