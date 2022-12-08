@@ -22,12 +22,21 @@ const StatisticsTable = () => {
     
     return (<>
         
-    <table className={style.transactionHistory}>
+      <div className={style.tableWrapper}>
+         <table className={style.transactionHistory}>
       <thead>
         <tr>
                     {/* <th><p>Category</p><p>Sum</p></th>           */}
-           <th className={style.categoryTh}>Category</th>          
-          <th className={style.sumTh}>Sum</th>
+              <th className={style.categoryTh}>
+                <div className={style.categoryTitleWrapper}>
+                  <p className={style.categoryTitle}>Category</p>
+                </div>
+              </th>          
+              <th className={style.sumTh}>
+                <div className={style.sumTitleWrapper}>
+                  <p className={style.sumTitle}>Sum</p>
+                </div>
+          </th>
         </tr>
       </thead>
 
@@ -42,11 +51,36 @@ const StatisticsTable = () => {
                     </div>
                 </td>
             {/* <td>{item.title}</td> */}
-            <td>{item.value}</td>
+            {/* <td><p className={style.categoryValue}>{item.value}</p></td> */}
+            <td >
+              <div className={style.categoryWrappers}>
+                <p className={style.categoryValue}>{item.value}</p>
+              </div>
+            </td>
+            
+  
           </tr>
         ))}
+            <tr>
+              <td><p className={style.incomeText}>Expenses:</p></td> 
+              <td>
+                <div className={style.valueWrapp}>
+                  <p className={style.expensesValue}>{total}</p>
+                </div>
+              </td>               
+            </tr>
+             <tr>              
+              <td><p className={style.incomeText}>Income:</p></td> 
+              <td >
+                <div className={style.valueWrapp}>
+                  <p className={style.incomeValue}>27 350</p>
+                </div>
+              </td>   
+            </tr>
+
       </tbody>
     </table>
+   </div>
   
     </>)
 }

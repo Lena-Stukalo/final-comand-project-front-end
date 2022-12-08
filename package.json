@@ -11,7 +11,6 @@
     "formik": "^2.2.9",
     "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",
-    "rc-table": "^7.28.1",
     "react": "^18.1.0",
     "react-chartjs-2": "^5.0.1",
     "react-datetime": "^3.2.0",
