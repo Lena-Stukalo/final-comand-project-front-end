@@ -1,10 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchData } from './operations';
 
 const initialState = {
-  user: {},
-  isLogin: false,
-  token: '',
   isLoading: false,
   error: null,
 };
@@ -12,27 +9,20 @@ const initialState = {
 const globalSlice = createSlice({
   name: 'global',
   initialState,
- 
+
   extraReducers: {
-  [fetchData.pending]: store => {
-    store.isLoading = true;
-    store.error = null;
-  },
-  [fetchData.fulfilled]: (store, { payload }) => {   
-    store.isLoading = false;
-    
-  },
-  [fetchData.rejected]: (store, { payload }) => {
-    store.isLoading = false;
-    store.error = payload;
+    [fetchData.pending]: store => {
+      store.isLoading = true;
+      store.error = null;
     },
-  
-  }
+    [fetchData.fulfilled]: (store, { payload }) => {
+      store.isLoading = false;
+    },
+    [fetchData.rejected]: (store, { payload }) => {
+      store.isLoading = false;
+      store.error = payload;
+    },
+  },
 });
 
-
-
-
 export const globalReducer = globalSlice.reducer;
-
-
