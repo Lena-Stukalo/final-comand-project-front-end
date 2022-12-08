@@ -19,6 +19,7 @@ const Input = ({
     >
       <InputLabelForm
         onChange={onChange}
+        type="email"
         id={id}
         name={id}
         value={value}

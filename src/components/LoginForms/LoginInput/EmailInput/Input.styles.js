@@ -7,10 +7,12 @@ export const InputForm = styled(FormControl)({
   '&:hover': {
     color: '#4a56e2',
   },
+  
 });
 
 export const InputLabelName = styled(InputLabel)({
   color: '#E0E0E0',
+  
 });
 
 export const InputLabelForm = styled(Input)({

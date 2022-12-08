@@ -33,6 +33,7 @@ const LoginForm = () => {
     validationSchema: validationSchema,
     onSubmit: values => {
       console.log(values);
+      alert(JSON.stringify(values, null, 2));
       formik.resetForm();
     },
   });
