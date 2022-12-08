@@ -1,4 +1,6 @@
 import style from "./Statistics.module.css"
+
+
 import { Link } from "react-router-dom";
 import homeImg from "./image/Exclude.png";
 import chartImg from "./image/Exclude1.png";
@@ -83,7 +85,8 @@ const Statistics = () => {
                 
             </div>
                 <div className={style.wrappCalendar}>
-                     <div className={style.wrapperMonth}>
+                        <div className={style.wrapperMonth}>
+                           
             <p>Month</p>
             <img src={arrow} alt=">" />
         </div>

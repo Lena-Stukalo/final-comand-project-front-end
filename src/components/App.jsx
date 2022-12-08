@@ -4,7 +4,10 @@ import Spinner from "./Spinner/Spinner";
 import { useSelector } from "react-redux";
 import RegisterContainer from "./RegisterContainer";
 import Header from './Header';
-import Statistics from "./Statistics/Statistics" 
+// import Statistics from "./Statistics/Statistics" 
+import Diagram from "./Diagram/Diagram";
+import Calendar from "./Calendar/Calendar";
+import StatisticsTable from "./StatisticsTable/StatisticsTable";
 
 
 
@@ -17,11 +20,14 @@ export const App = () => {
 
     <>
       {loading && <Spinner />}
-      <Statistics />
+      {/* <Statistics /> */}
       
       {/* <List/>      */}
       {/* <RegisterContainer/>
       <Header /> */}
+      {/* <Diagram /> */}
+       {/* <Calendar/> */}
+       <StatisticsTable/>
     </>
 
 
