@@ -1,3 +1,4 @@
+
 import Spinner from "./Spinner/Spinner";
 import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
@@ -17,6 +18,5 @@ export const App = () => {
       <RegisterContainer/>
       <Header />
     </>
-
   );
 };
