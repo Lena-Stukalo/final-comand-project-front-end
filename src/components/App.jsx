@@ -1,5 +1,5 @@
-import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Media from 'react-media';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
@@ -16,15 +16,17 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/">
-          <Route element={<PublicRoute />}>
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<RegisterContainer />} />
-          </Route>
-          <Route element={<PrivatRoute />}>
-            <Route path="home" element={<Currency />} />
-            <Route path="diagram" element={<Currency />} />
-          </Route>
+        <Route element={<PublicRoute />}>
+          <Route path="login" element={<Header />} />
+          <Route path="register" element={<RegisterContainer />} />
+        </Route>
+        <Route element={<PrivatRoute />}>
+          <Route path="home" element={<Header />} />
+          <Route path="diagram" element={<Header />} />
+          <Media
+            query="(max-width: 767px)"
+            render={() => <Route path="diagram" element={<Header />} />}
+          />
         </Route>
       </Routes>
       {/* {loading && <Spinner />}

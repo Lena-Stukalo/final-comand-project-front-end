@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter /*basename="/final-comand-project-front-end/"*/>
         <App />
       </BrowserRouter>
     </React.StrictMode>
