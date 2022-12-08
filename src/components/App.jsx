@@ -23,9 +23,9 @@ export const App = () => {
       {/* <List/>      */}
       {/* <RegisterContainer/>
       <Header /> */}
-      <Diagram />
+      {/* <Diagram /> */}
        <Calendar/>
-       <StatisticsTable/>
+       {/* <StatisticsTable/> */}
     </>
 
 
