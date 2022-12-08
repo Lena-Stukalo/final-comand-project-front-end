@@ -3,6 +3,9 @@ p {
     padding: 0;
 }
 
+@media screen and (min-width: 320px) {
+
+
 tr {
     width: 280px;
 
@@ -42,7 +45,7 @@ td {
 
 .transactionHistory {
     color: rgb(8, 8, 8);
-    max-width: 280px;
+    width: 280px;
     border-collapse: collapse;
     /* border: 1px solid #d8e0ea; */
     /* text-align: center; */
@@ -176,3 +179,20 @@ font-family: 'Circe';
     
 }
 
+}
+
+@media screen and (min-width: 768px) {
+    .transactionHistory {
+        width: 336px;
+    }
+
+      
+
+}
+
+@media screen and (min-width: 1280px) {
+.transactionHistory {
+        width: 395px;
+    }
+      
+}
