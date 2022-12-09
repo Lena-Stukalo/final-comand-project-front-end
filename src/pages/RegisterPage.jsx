@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { register } from "redux/auth/auth-operations";
 import useAuth from "hooks/useAuth";
 import { Navigate } from "react-router-dom";
+import Alert from '@mui/material/Alert';
 
 const RegisterPage = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const RegisterPage = () => {
     return (
         <>
             <RegisterContainer onSubmit={onRegister} />
-            {status && <div>Error {message}</div>}
+            {status && <Alert severity="error">{message}</Alert>}
         </>
     )
 };
