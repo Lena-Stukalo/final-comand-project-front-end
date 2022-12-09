@@ -1,22 +1,30 @@
 import { useFormik } from "formik";
+// import { useEffect } from "react";
+import RegistrationSchema from "schemas/registration";
+import { initialState } from "./initialState";
+import useForm from "hooks/useForm";
+
 import styles from './registration-form.module.css';
 import { ReactComponent as WalletIcon } from '../../images/wallet-icon.svg';
 import { ReactComponent as EmailIcon } from '../../images/envelop-icon.svg';
 import { ReactComponent as LockIcon } from '../../images/lock-icon.svg';
 import { ReactComponent as AccountIcon } from '../../images/account-icon.svg';
 
+const RegistrationForm = ({onSubmit}) => {
+    
+    const { state, setState } = useForm({ initialState, onSubmit});
 
-const RegistrationForm = () => {
-const formik = useFormik({
-     initialValues: {
-       email: '',
-     },
+    const formik = useFormik({
+        initialValues: initialState,
+        validationSchema: RegistrationSchema,
 
-    onSubmit: values => {
-         console.log(values.email);
-       alert(JSON.stringify(values, null, 2));
-     },
-   });
+        onSubmit: values => {
+            console.log(values)
+            setState(values)
+
+            onSubmit(values);
+        },
+    });
 
     return (
         <div className={styles.form__container}>
@@ -24,40 +32,80 @@ const formik = useFormik({
                 <WalletIcon width={30} height={30} />
                 <h2 className={styles.title}>Wallet</h2>
             </div>
-            <form className={styles.form}>
+
+            <form className={styles.form} onSubmit={formik.handleSubmit}>
                 <label className={styles.form__label}>
                     <EmailIcon width={24} height={24} className={styles.icon} />
-                    E-mail
-                    <input 
-                        className={styles.form__input} 
+                    <input
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        placeholder='E-mail'
+                        className={`${formik.errors.email && formik.touched.email ? styles.form__error : styles.form__input}`}
                         id="email"
                         name="email"
                         type="email"
                     />
                 </label>
- 
+                {formik.touched.email && formik.errors.email ? (
+                    <div className={styles.error}>{formik.errors.email}</div>
+                ) : null}
 
                 <label className={styles.form__label}>
                     <LockIcon width={24} height={24} className={styles.icon} />
-                    Password
-                    <input className={styles.form__input} />
+                    <input
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.password}
+                        placeholder='Password'
+                        name='password'
+                        id='password'
+                        type='password'
+                        className={`${formik.errors.password && formik.touched.password ? styles.form__error : styles.form__input}`}
+                    />
                 </label>
+                {formik.touched.password && formik.errors.password ? (
+                    <div className={styles.error}>{formik.errors.password}</div>
+                ) : null}
 
                 <label className={styles.form__label}>
                     <LockIcon width={24} height={24} className={styles.icon} />
-                    Confirm password
-                    <input className={styles.form__input}  />
+                    <input
+                        id="confirmPassword"
+                        type="password"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.confirmPassword}
+                        placeholder='Confirm password'
+                        name='confirmPassword'
+                        className={`${formik.errors.confirmPassword && formik.touched.confirmPassword ? styles.form__error : styles.form__input}`}
+                    />
                 </label>
-
+                {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+                    <div className={styles.error}>{formik.errors.confirmPassword}</div>
+                ) : null}
+                        
+                
                 <label className={styles.form__label}>
                     <AccountIcon width={24} height={24} className={styles.icon} />
-                    First name
-                    <input className={styles.form__input}  />
+                    <input
+                        id="firstName"
+                        type="text"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.firstName}
+                        placeholder='First name'
+                        name='firstName'
+                        className={`${formik.errors.firstName && formik.touched.firstName ? styles.form__error : styles.form__input}`}
+                    />
                 </label>
-
+                {formik.touched.firstName && formik.errors.firstName ? (
+                    <div className={styles.error}>{formik.errors.firstName}</div>
+                ) : null}
+    
                 <div className={styles.buttons__container}>
                     <button className={styles.register__button} type="submit">Register</button>
-                    <button className={styles.login__button}>Log in</button>
+                    <button className={styles.login__button} type='button'>Log in</button>
                 </div>
             </form>
         </div>
