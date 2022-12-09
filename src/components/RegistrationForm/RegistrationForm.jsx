@@ -1,20 +1,28 @@
 import { useFormik } from "formik";
-
+// import { useEffect } from "react";
 import RegistrationSchema from "schemas/registration";
 import { initialState } from "./initialState";
+import useForm from "hooks/useForm";
+
 import styles from './registration-form.module.css';
 import { ReactComponent as WalletIcon } from '../../images/wallet-icon.svg';
 import { ReactComponent as EmailIcon } from '../../images/envelop-icon.svg';
 import { ReactComponent as LockIcon } from '../../images/lock-icon.svg';
 import { ReactComponent as AccountIcon } from '../../images/account-icon.svg';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({onSubmit}) => {
+    
+    const { state, setState } = useForm({ initialState, onSubmit});
+
     const formik = useFormik({
         initialValues: initialState,
         validationSchema: RegistrationSchema,
 
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            console.log(values)
+            setState(values)
+
+            onSubmit(values);
         },
     });
 
@@ -24,62 +32,26 @@ const RegistrationForm = () => {
                 <WalletIcon width={30} height={30} />
                 <h2 className={styles.title}>Wallet</h2>
             </div>
-                   
-            <form className={styles.form} onSubmit={formik.handleSubmit}>
 
-                {formik.touched.email && formik.errors.email ? (
-                    <>
-                        <label className={styles.form__label}>
-                            <EmailIcon width={24} height={24} className={styles.icon} />
-                            <input
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.email}
-                                placeholder='E-mail'
-                                className={styles.form__error}
-                                id="email"
-                                name="email"
-                                type="email"
-                            />
-                        </label>
-                        <div className={styles.error}>
-                            {formik.errors.email}
-                        </div>
-                    </>
-                ) : <label className={styles.form__label}>
+            <form className={styles.form} onSubmit={formik.handleSubmit}>
+                <label className={styles.form__label}>
                     <EmailIcon width={24} height={24} className={styles.icon} />
                     <input
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.email}
                         placeholder='E-mail'
-                        className={styles.form__input}
+                        className={`${formik.errors.email && formik.touched.email ? styles.form__error : styles.form__input}`}
                         id="email"
                         name="email"
                         type="email"
                     />
-                </label>}
-            
-                {formik.touched.password && formik.errors.password ? (
-                    <>
-                        <label className={styles.form__label}>
-                            <LockIcon width={24} height={24} className={styles.icon} />
-                            <input
-                                onChange={formik.handleChange}
-                                onBlur={formik.handleBlur}
-                                value={formik.values.password}
-                                placeholder='Password'
-                                name='password'
-                                id='password'
-                                type='password'
-                                className={styles.form__error}
-                            />
-                        </label>
-                        <div className={styles.error}>
-                            {formik.errors.password}
-                        </div>
-                    </>
-                ) : (<label className={styles.form__label}>
+                </label>
+                {formik.touched.email && formik.errors.email ? (
+                    <div className={styles.error}>{formik.errors.email}</div>
+                ) : null}
+
+                <label className={styles.form__label}>
                     <LockIcon width={24} height={24} className={styles.icon} />
                     <input
                         onChange={formik.handleChange}
@@ -89,31 +61,15 @@ const RegistrationForm = () => {
                         name='password'
                         id='password'
                         type='password'
-                        className={styles.form__input}
+                        className={`${formik.errors.password && formik.touched.password ? styles.form__error : styles.form__input}`}
                     />
-                </label>)}
-                        
-                {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-                    <>            <label className={styles.form__label}>
-                        <LockIcon width={24} height={24} className={styles.icon} />
-                                
-                        <input
-                            id="confirmPassword"
-                            type="password"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.confirmPassword}
-                            placeholder='Confirm password'
-                            name='confirmPassword'
-                            className={styles.form__error} />
-                    </label>
-                        <div className={styles.error}>
-                            {formik.errors.confirmPassword}
-                        </div>
-                    </>
-                ) : <label className={styles.form__label}>
+                </label>
+                {formik.touched.password && formik.errors.password ? (
+                    <div className={styles.error}>{formik.errors.password}</div>
+                ) : null}
+
+                <label className={styles.form__label}>
                     <LockIcon width={24} height={24} className={styles.icon} />
-                                
                     <input
                         id="confirmPassword"
                         type="password"
@@ -122,28 +78,16 @@ const RegistrationForm = () => {
                         value={formik.values.confirmPassword}
                         placeholder='Confirm password'
                         name='confirmPassword'
-                        className={styles.form__input} />
-                </label>}
-            
-                {formik.touched.firstName && formik.errors.firstName ? (
-                    <>                    <label className={styles.form__label}>
-                        <AccountIcon width={24} height={24} className={styles.icon} />     
-                        <input
-                            id="firstName"
-                            type="text"
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            value={formik.values.firstName}
-                            placeholder='First name'
-                            name='firstName'
-                            className={styles.form__input} />
-                    </label>
-                   
-                        <div className={styles.error}>{formik.errors.firstName}</div>
-                    </>
-                ) : <label className={styles.form__label}>
+                        className={`${formik.errors.confirmPassword && formik.touched.confirmPassword ? styles.form__error : styles.form__input}`}
+                    />
+                </label>
+                {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
+                    <div className={styles.error}>{formik.errors.confirmPassword}</div>
+                ) : null}
+                        
+                
+                <label className={styles.form__label}>
                     <AccountIcon width={24} height={24} className={styles.icon} />
-                                
                     <input
                         id="firstName"
                         type="text"
@@ -152,9 +96,13 @@ const RegistrationForm = () => {
                         value={formik.values.firstName}
                         placeholder='First name'
                         name='firstName'
-                        className={styles.form__input} />
-                </label>}
-
+                        className={`${formik.errors.firstName && formik.touched.firstName ? styles.form__error : styles.form__input}`}
+                    />
+                </label>
+                {formik.touched.firstName && formik.errors.firstName ? (
+                    <div className={styles.error}>{formik.errors.firstName}</div>
+                ) : null}
+    
                 <div className={styles.buttons__container}>
                     <button className={styles.register__button} type="submit">Register</button>
                     <button className={styles.login__button} type='button'>Log in</button>

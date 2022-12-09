@@ -21,6 +21,13 @@
     margin-left: 15px;
 }
 
+.form__input {
+    padding: 5px 0px 5px 30px;
+    width: 90%;
+    height: 24px;
+    border: none;
+}
+
 .form__error {
     width: 90%;
     padding: 5px 0px 5px 30px;
@@ -28,12 +35,6 @@
     border: 1px solid red;
 }
 
-.form__input {
-    padding: 5px 0px 5px 30px;
-    width: 90%;
-    height: 24px;
-    border: none;
-}
 
 input:invalid {
     border: 1px solid red;
