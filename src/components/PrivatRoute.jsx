@@ -6,7 +6,7 @@ export default function PrivatRoute() {
   const IsLoggedIn = useSelector(AuthSelectors.getIsLoggedIn);
 
   if (!IsLoggedIn) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/register" />;
   }
 
   return <Outlet />;

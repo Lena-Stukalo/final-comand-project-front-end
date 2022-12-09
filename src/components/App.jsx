@@ -7,6 +7,7 @@ import Spinner from './Spinner/Spinner';
 import { List } from 'redux/data/data';
 import RegisterContainer from './RegisterContainer';
 import Header from './Header';
+import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
 
@@ -21,12 +22,11 @@ export const App = () => {
           <Route path="register" element={<RegisterContainer />} />
         </Route>
         <Route element={<PrivatRoute />}>
-          <Route path="home" element={<Header />} />
-          <Route path="diagram" element={<Header />} />
-          <Media
-            query="(max-width: 767px)"
-            render={() => <Route path="diagram" element={<Header />} />}
-          />
+          <Route path="/" element={<Dashboard />}>
+            <Route path="home" element={<Header />} />
+            <Route path="diagram" element={<Header />} />
+            <Route path="currency" element={<Header />} />
+          </Route>
         </Route>
       </Routes>
       {/* {loading && <Spinner />}

@@ -2,7 +2,7 @@
   "name": "final-comand-project-front-end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Lena-Stukalo.github.io/final-comand-project-front-end/",
+  "homepage": "https://Lena-Stukalo.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.3",
