@@ -10,6 +10,7 @@ import Header from './Header';
 import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
+import { Currency } from './currency/Currency';
 
 export const App = () => {
   // const loading = useSelector(state => state.global.isLoading);
@@ -25,7 +26,7 @@ export const App = () => {
           <Route path="/" element={<Dashboard />}>
             <Route path="home" element={<Header />} />
             <Route path="diagram" element={<Header />} />
-            <Route path="currency" element={<Header />} />
+            <Route path="currency" element={<Currency />} />
           </Route>
         </Route>
       </Routes>
