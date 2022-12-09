@@ -82,9 +82,19 @@
         }
     
         .datetimeYear {
+            
             margin-top: 15px;
             margin-left: 32px;
+
+            
         }
 
 }
 
+/* .ddd {
+    width: 181px;
+        height: 50px;       
+    
+        border: 1px solid #000000;
+        border-radius: 30px;
+} */
