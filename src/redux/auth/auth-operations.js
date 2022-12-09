@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-axios.defaults.baseURL = 'https://project-front-end.goit.ua/';
+axios.defaults.baseURL = 'https://final-comand-project-front-end/';
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
