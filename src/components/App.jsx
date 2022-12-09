@@ -4,6 +4,8 @@ import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
 import RegisterContainer from "./RegisterContainer";
 import Header from './Header';
+import { Balance } from "./Balance/Balance";
+import { ModalLogout } from "./ModalLogout/ModalLogout";
 
 export const App = () => {
 
@@ -17,6 +19,8 @@ export const App = () => {
       <List/>   
       <RegisterContainer/>
       <Header />
+      <Balance />
+      <ModalLogout />
     </>
   );
 };
