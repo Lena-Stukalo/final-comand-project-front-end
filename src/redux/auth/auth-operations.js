@@ -1,3 +1,4 @@
+import * as api from '../../api/auth';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -10,6 +11,24 @@ const setAuthHeader = token => {
 const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
+export const register = createAsyncThunk(
+  'auth/register',
+  async (data, { rejectWithValue }) => {
+    console.log('Data in auth-operations: ' + JSON.stringify(data));
+
+    try {
+      const result = await api.signup(data);
+      return result;
+    } catch ({ response }) {
+      const { status, data } = response;
+      const error = {
+        status,
+        message: data.message,
+      };
+      return rejectWithValue(error);
+    }
+  }
+);
 
 export const registration = createAsyncThunk(
   'auth/registration',
