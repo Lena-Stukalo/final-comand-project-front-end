@@ -1,8 +1,8 @@
 {
-  "name": "react-homework-template",
+  "name": "final-comand-project-front-end",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Lena-Stukalo.github.io/final-comand-project-front-end/",
+  "homepage": "https://Lena-Stukalo.github.io/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
