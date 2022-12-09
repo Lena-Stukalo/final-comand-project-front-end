@@ -1,8 +1,7 @@
-
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import RegisterContainer from './RegisterContainer';
+import RegisterPage from 'pages/RegisterPage';
 import Header from './Header';
 import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
@@ -15,7 +14,7 @@ export const App = () => {
       <Routes>
         <Route element={<PublicRoute />}>
           <Route path="login" element={<Header />} />
-          <Route path="register" element={<RegisterContainer />} />
+          <Route path="register" element={<RegisterPage />} />
         </Route>
         <Route element={<PrivatRoute />}>
           <Route path="/" element={<Dashboard />}>
@@ -26,6 +25,5 @@ export const App = () => {
         </Route>
       </Routes>
     </div>
-
   );
 };
