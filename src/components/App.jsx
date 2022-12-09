@@ -17,7 +17,7 @@ export const App = () => {
       {loading && <Spinner />}
       <List/>   
       <RegisterPage/>
-      <Header />
+      {/* <Header /> */}
     </>
   );
 };

@@ -16,7 +16,7 @@ const RegisterPage = () => {
     };
 
             if(isLogin) {
-        return <Navigate to="/contacts" />
+        return <Navigate to="/" />
     }
 
     return (
