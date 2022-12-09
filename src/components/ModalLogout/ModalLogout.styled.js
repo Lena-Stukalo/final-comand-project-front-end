@@ -49,7 +49,7 @@ export const BtnYes = styled.button`
   font-size: 16px;
   line-height: 1.5;
   background-color: var(--btn-bg-color);
-  border: none;
+  border-radius: 20px;
   color: var(--white);
   padding: 10px 50px;
   text-align: center;

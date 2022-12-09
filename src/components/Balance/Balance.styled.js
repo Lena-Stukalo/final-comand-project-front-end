@@ -39,4 +39,5 @@ export const Amount = styled.p`
   line-height: 1.5;
   align-items: center;
   color: var(--black);
+  margin: 0;
 `;
