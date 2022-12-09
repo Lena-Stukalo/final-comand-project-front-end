@@ -1,9 +1,9 @@
 import Spinner from "./Spinner/Spinner";
 import { List } from "redux/data/data";
 import { useSelector } from "react-redux";
-import RegisterContainer from "./RegisterContainer";
 import Header from './Header';
-// import { Routes, Route } from "react-router-dom";
+import RegisterPage from "pages/RegisterPage";
+
 
 export const App = () => {
 
@@ -14,10 +14,9 @@ export const App = () => {
     
     <>
         <Header />
-        {/* <RegisterPage /> */}
       {loading && <Spinner />}
       <List/>   
-      <RegisterContainer/>
+      <RegisterPage/>
       <Header />
     </>
   );
