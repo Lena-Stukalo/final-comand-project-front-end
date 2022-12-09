@@ -1,10 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import Media from 'react-media';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
-import Spinner from './Spinner/Spinner';
-import { List } from 'redux/data/data';
 import RegisterContainer from './RegisterContainer';
 import Header from './Header';
 import { Dashboard } from './dashbord/Dashboard';
@@ -13,8 +9,6 @@ import PublicRoute from './PublicRoute';
 import { Currency } from './currency/Currency';
 
 export const App = () => {
-  // const loading = useSelector(state => state.global.isLoading);
-
   return (
     <div>
       <Routes>
@@ -30,10 +24,6 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
-      {/* {loading && <Spinner />}
-        <List/>   
-        <RegisterContainer/>
-        <Header /> */}
     </div>
   );
 };
