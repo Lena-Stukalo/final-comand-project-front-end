@@ -100,12 +100,11 @@ const Li = styled.li`
   padding: 0 20px 0 20px;
   display: flex;
   align-items: center;
-  font-family: 'Circe';
+font-family: 'Circe, Manrope, sans-serif';
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
-  font-weight: 400;
-   line-height: 1.5;
+ line-height: 1.5;
   &:hover,
   &:focus {
     font-weight: 700;

@@ -27,3 +27,9 @@ code {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
