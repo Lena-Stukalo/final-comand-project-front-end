@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import * as api from '../../api/auth';
 
 axios.defaults.baseURL =
-  'https://final-comand-project-back-end-production.up.railway.app/';
+  'https://final-comand-project-back-end-production.up.railway.app/api';
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -14,7 +15,8 @@ const token = {
 
 const register = createAsyncThunk('auth/register', async credentials => {
   try {
-    const { data } = await axios.post('/auth/register', credentials);
+    const result = await api.signup(credentials);
+    const { data } = await axios.post('/auth/register', result);
     token.set(data.token);
     return data;
   } catch (error) {}
