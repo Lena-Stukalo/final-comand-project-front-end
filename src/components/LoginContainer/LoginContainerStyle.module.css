@@ -32,6 +32,15 @@
   .main__image {
     display: block;
   }
+  .app__title {
+    display: block;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #000000;
+    margin-left: 40px;
+  }
 }
 
 /* Desktop */
@@ -53,7 +62,7 @@
     margin-bottom: 0;
     flex-direction: column;
     position: relative;
-    bottom: -50px;
+    bottom: -150px;
   }
 
   .main__image {
@@ -62,5 +71,14 @@
 
   .main__image_desktop {
     display: block;
+  }
+  .app__title {
+    display: block;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #000000;
+    padding-top: 30px;
   }
 }

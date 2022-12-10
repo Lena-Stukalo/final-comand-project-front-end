@@ -1,7 +1,7 @@
 import styles from './LoginContainerStyle.module.css';
 import LoginForm from '../LoginForms/LoginForm/LoginForm';
-import MainAppImage from '../../images/main-app-img.png';
-import MainAppImageDesktop from '../../images/main-app-desktop.png';
+import MainAppImage from '../../images/main-app-img-tablet.png';
+import MainAppImageDesktop from '../../images/main-app-img-desk.png';
 
 const LoginContainer = () => {
   return (
@@ -19,7 +19,7 @@ const LoginContainer = () => {
         />
         <h1 className={styles.app__title}>Finance App</h1>
       </div>
-      <LoginForm />;
+      <LoginForm />
     </section>
   );
 };
