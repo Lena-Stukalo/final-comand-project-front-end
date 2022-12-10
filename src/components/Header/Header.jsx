@@ -7,6 +7,7 @@ import css from './Header.module.css';
 import { ModalLogout } from 'components/ModalLogout/ModalLogout';
 
 import { getIsModalLogoutOpen } from 'redux/selectors';
+import AuthSelectors from 'redux/auth/authSelectors';
 import { toggleModal } from 'redux/data/globalSlice';
 
 import Logo from 'components/Logo';
@@ -16,6 +17,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const isModalLogoutOpen = useSelector(getIsModalLogoutOpen);
+  const userName = useSelector(AuthSelectors.getUserName);
 
   return (
     <header>
@@ -23,7 +25,7 @@ const Header = () => {
         <nav className={css.nav}>
           <Logo path="/home" />
           <div className={css.user_nav}>
-            <p className={css.user_nav_item}>Name</p>
+            <p className={css.user_nav_item}>{userName}</p>
             <button
               type="button"
               className={css.button_exit}
