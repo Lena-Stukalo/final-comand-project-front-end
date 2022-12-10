@@ -1,9 +1,9 @@
-import RegistrationForm from '../RegistrationForm';
+import RegistrationForm from '../RegistrationForm/RegistrationForm';
 import styles from './register-container.module.css';
 import MainAppImage from '../../images/main-app-img.png';
 import MainAppImageDesktop from '../../images/main-app-desktop.png';
 
-const RegisterContainer = () => {
+const RegisterContainer = ({ onSubmit }) => {
   return (
     <section className={styles.container}>
       <div className={styles.title__box}>
@@ -19,7 +19,8 @@ const RegisterContainer = () => {
         />
         <h1 className={styles.app__title}>Finance App</h1>
       </div>
-      <RegistrationForm />
+
+      <RegistrationForm onSubmit={onSubmit} />
     </section>
   );
 };
