@@ -3,7 +3,7 @@ import LoginForm from '../LoginForms/LoginForm/LoginForm';
 import MainAppImage from '../../images/main-app-img-tablet.png';
 import MainAppImageDesktop from '../../images/main-app-img-desk.png';
 
-const LoginContainer = () => {
+const LoginContainer = ({ onSubmit }) => {
   return (
     <section className={styles.container}>
       <div className={styles.title__box}>
@@ -19,7 +19,7 @@ const LoginContainer = () => {
         />
         <h1 className={styles.app__title}>Finance App</h1>
       </div>
-      <LoginForm />
+      <LoginForm onSubmit={onSubmit} />
     </section>
   );
 };

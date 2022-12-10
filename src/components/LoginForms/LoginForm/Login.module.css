@@ -15,7 +15,6 @@
   width: 280px;
   margin-top: 60px;
 }
-
 @media (min-width: 768px) {
   .container {
     min-width: 410px;

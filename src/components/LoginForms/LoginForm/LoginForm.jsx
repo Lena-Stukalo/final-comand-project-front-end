@@ -12,29 +12,38 @@ import FormBtn from '../FromBtn/FormBtn';
 import EmailInput from '../LoginInput/EmailInput/Input';
 import PasswordInput from '../LoginInput/PasswordInput/PasswordInput.jsx';
 
-import { Formik } from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { initialState } from 'components/RegistrationForm/initialState';
+import useForm from 'hooks/useForm';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .matches(/\b[\w.-]+@[\w.-]+\.\w{2,4}\b/, 'Invalid email address')
-    .required('validation.email'),
-  password: Yup.string().required('validation.password'),
+    .required('Reqyired'),
+  password: Yup.string()
+    .min(6, 'Too Short!')
+    .max(16, 'Too Long!')
+    .required('Required'),
 });
 
-const LoginForm = () => {
+const LoginForm = ({ onSubmit }) => {
   // const dispatch = useDispatch();
+  const initialState = {
+    email: '',
+    password: '',
+  };
+  const { state, setState } = useForm({ initialState, onSubmit });
 
-  const formik = Formik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
+  const formik = useFormik({
+    initialValues: initialState,
     validationSchema: validationSchema,
+
     onSubmit: values => {
       console.log(values);
-      alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
+      setState(values);
+
+      onSubmit(values);
     },
   });
 
@@ -43,26 +52,26 @@ const LoginForm = () => {
       <Logo />
       <form onSubmit={formik.handleSubmit} className={css.form}>
         <EmailInput
-          label={'E-mail'}
+          label="E-mail"
           icon={AiFillMail}
           mb={40}
-          id={'email'}
-          // value={formik.email}
+          id="email"
+          value={formik.values.email}
           onBlur={formik.handleBlur}
-          onChangeText={formik.handleChange}
-          // error={formik.touched.email && Boolean(formik.errors.email)}
-          // helper={formik.errors.email}
+          onChange={formik.handleChange}
+          error={formik.touched.email && Boolean(formik.errors.email)}
+          helper={formik.errors.email}
         />
         <PasswordInput
           label={'Password'}
           icon={AiFillLock}
           mb={40}
           id={'password'}
-          // value={formik.values.password}
+          value={formik.values.password}
           onBlur={formik.handleBlur}
-          onChangeText={formik.handleChange}
-          // helper={formik.errors.password}
-          // error={formik.touched.password && Boolean(formik.errors.password)}
+          onChange={formik.handleChange}
+          helper={formik.errors.password}
+          error={formik.touched.password && Boolean(formik.errors.password)}
         />
         <FormBtn
           title={'LOG IN'}
