@@ -21,7 +21,7 @@ const Header = () => {
     <header>
       <div className={css.container}>
         <nav className={css.nav}>
-          <Logo />
+          <Logo path="/home" />
           <div className={css.user_nav}>
             <p className={css.user_nav_item}>Name</p>
             <button

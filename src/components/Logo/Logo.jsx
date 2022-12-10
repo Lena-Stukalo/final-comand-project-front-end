@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './Logo.module.css';
 
-const Logo = () => {
+const Logo = ({ path }) => {
   return (
-    <NavLink to="/home" className={css.ref}>
+    <NavLink to={path} className={css.ref}>
       <svg
         className={css.svg}
         width="40"
