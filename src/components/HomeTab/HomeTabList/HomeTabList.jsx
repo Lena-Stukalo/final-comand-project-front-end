@@ -1,56 +1,67 @@
+import {
+  TransactionsList,
+  TransactionsListItem,
+  TransactionCard,
+  PropertyList,
+  PropertyListItem,
+  PropertyListItemWrapper,
+  Key,
+  Value,
+} from './HomeTabList.styled';
+
 const HomeTabList = ({ data }) => {
   return (
-    <ul>
+    <TransactionsList>
       {data.map(item => (
-        <li key={item._id}>
-          <div>
-            <ul>
-              <li>
-                <div>
-                  <p>Date</p>
-                  <p>{item.date}</p>
-                </div>
-              </li>
+        <TransactionsListItem key={item._id}>
+          <TransactionCard>
+            <PropertyList>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Date</Key>
+                  <Value>{item.date}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
 
-              <li>
-                <div>
-                  <p>Type</p>
-                  <p>{item.isIncome ? '+' : '-'}</p>
-                </div>
-              </li>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Type</Key>
+                  <Value>{item.isIncome ? '+' : '-'}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
 
-              <li>
-                <div>
-                  <p>Category</p>
-                  <p>{item.category}</p>
-                </div>
-              </li>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Category</Key>
+                  <Value>{item.category}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
 
-              <li>
-                <div>
-                  <p>Comment</p>
-                  <p>{item.comment ? item.comment : 'No comment'}</p>
-                </div>
-              </li>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Comment</Key>
+                  <Value>{item.comment ? item.comment : 'No comment'}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
 
-              <li>
-                <div>
-                  <p>Sum</p>
-                  <p>{item.sum}</p>
-                </div>
-              </li>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Sum</Key>
+                  <Value>{item.sum}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
 
-              <li>
-                <div>
-                  <p>Balance</p>
-                  <p>{item.balance}</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </li>
+              <PropertyListItem isIncome={item.isIncome}>
+                <PropertyListItemWrapper>
+                  <Key>Balance</Key>
+                  <Value>{item.balance}</Value>
+                </PropertyListItemWrapper>
+              </PropertyListItem>
+            </PropertyList>
+          </TransactionCard>
+        </TransactionsListItem>
       ))}
-    </ul>
+    </TransactionsList>
   );
 };
 

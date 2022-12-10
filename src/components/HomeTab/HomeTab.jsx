@@ -3,6 +3,7 @@ import Media from 'react-media';
 // import ccs from './HomeTab.module.css';
 
 import HomeTabList from './HomeTabList/HomeTabList';
+import HomeTabTable from './HomeTabTable/HomeTabTable';
 
 const HomeTab = ({ data }) => {
   console.log(data);
@@ -15,7 +16,11 @@ const HomeTab = ({ data }) => {
       >
         {matches => (
           <>
-            {!matches.medium ? <HomeTabList data={data} /> : <p>Not phone</p>}
+            {!matches.medium ? (
+              <HomeTabList data={data} />
+            ) : (
+              <HomeTabTable data={data} />
+            )}
           </>
         )}
       </Media>
