@@ -16,6 +16,7 @@ import { transactionsApi } from './transactionsOperations';
 export const store = configureStore({
   reducer: {
     global: globalReducer,
+
     [transactionsApi.reducerPath]: transactionsApi.reducer,
   },
   middleware: getDefaultMiddleware => [

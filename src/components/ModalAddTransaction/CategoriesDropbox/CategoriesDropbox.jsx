@@ -80,6 +80,7 @@ const Div = styled.div`
 const H2 = styled.h2`
   font-weight: 400;
   font-size: 18px;
+  margin: 0;
   color: ${p => (p.select ? '#000000' : '#bdbdbd')};
 `;
 const Ul = styled.ul`

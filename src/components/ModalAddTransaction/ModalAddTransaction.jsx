@@ -62,9 +62,9 @@ export default function ModalAddTransactions() {
       <div>
         <Title>Add transaction</Title>
         <Form onSubmit={handleSubmit}>
-          <Label border>
+          <label border>
             <TransactionSwitcher check={toggleChange} />
-          </Label>
+          </label>
           {!checked && (
             <Label>
               <CategoriesDropbox select={setCategory} />
@@ -147,12 +147,13 @@ const Label = styled.label`
   width: 280px;
   margin-bottom: 40px;
   font-weight: ${p => p.fontWeight || '400'};
-  border-bottom: ${p => (!p.border ? `1px solid '#E0E0E0'` : 'none')};
+  border-bottom: 1px solid #e0e0e0;
+
   line-height: 0;
   input,
   textarea {
     padding: 0 20px;
-    font-weight: inherit;
+    font-weight: 400;
     line-height: 1.5;
     border: none;
     &:focus-visible {
@@ -197,14 +198,18 @@ const ContainerStyle = styled.div`
   }
 `;
 const Textarea = styled.textarea`
+  height: 84px;
+  width: 280px;
+  max-height: 150px;
   font-family: 'Circe, Manrope, sans-serif';
   font-style: normal;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
-  font-size: inherit;
   color: #bdbdbd;
   resize: none;
   @media screen and (min-width: 768px) {
+    font-size: 18px;
     width: 394px;
     height: 32px;
     max-height: 280px;

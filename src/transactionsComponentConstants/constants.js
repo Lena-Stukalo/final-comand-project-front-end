@@ -26,7 +26,8 @@ const ROUTES = {
 const BASE_URL = {
   FRONT: 'http://localhost:3000',
   BACK: 'http://localhost:8000',
-  //SERVER: 'backend-site',
+  SERVER:
+    'https://final-comand-project-back-end-production.up.railway.app/api-docs/',
 };
 
 export { switchersOptions, statisticsColors, ROUTES, BASE_URL };
