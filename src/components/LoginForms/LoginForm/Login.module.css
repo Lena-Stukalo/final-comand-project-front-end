@@ -7,12 +7,21 @@
   background-color: #ffffff;
 }
 .login__button {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  width: 300px;
+  height: 50px;
   font-family: 'Circe';
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
+  color: #ffffff;
+  background-color: #24cca7;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
 }
 .registerLink__button {
   font-family: 'Circe';

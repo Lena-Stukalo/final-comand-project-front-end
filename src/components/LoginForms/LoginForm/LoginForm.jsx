@@ -72,13 +72,13 @@ const LoginForm = ({ onSubmit }) => {
           helper={formik.errors.password}
           error={formik.touched.password && Boolean(formik.errors.password)}
         />
-        <FormBtn
-          style={css.login__button}
+        <button
+          className={css.login__button}
           title={'LOG IN'}
           variant="contained"
           type="submit"
           color="#24CCA7"
-        />
+        >{`log in`}</button>
       </form>
       <FormBtnLink
         text={'Register'}
