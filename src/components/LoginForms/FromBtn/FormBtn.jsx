@@ -8,9 +8,11 @@ const FormBtn = ({
   disabled = false,
   mb = '20px',
   width = '300px',
+  style,
 }) => {
   return (
     <Button
+      className={style}
       variant={variant}
       type={type}
       disabled={disabled}
