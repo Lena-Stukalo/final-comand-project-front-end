@@ -1,9 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import css from './Logo.module.css';
 
 const Logo = () => {
   return (
-    <a href="/" className={css.ref}>
+    <NavLink to="/home" className={css.ref}>
       <svg
         className={css.svg}
         width="40"
@@ -30,7 +31,7 @@ const Logo = () => {
         />
       </svg>
       <p className={css.text}>Wallet</p>
-    </a>
+    </NavLink>
   );
 };
 
