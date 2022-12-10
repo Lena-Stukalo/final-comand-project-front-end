@@ -10,7 +10,7 @@ import {
   ExitTitle,
 } from './ModalLogout.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#modal-logout-root');
 
 export const ModalLogout = ({ closeModal }) => {
   const dispatch = useDispatch();
