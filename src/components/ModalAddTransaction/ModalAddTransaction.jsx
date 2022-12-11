@@ -24,15 +24,15 @@ const { income, transactionsTypeIncome, transactionsTypeExpense } =
 export default function ModalAddTransactions() {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date().toLocaleDateString());
   const [sum, setSum] = useState();
   const [comment, setComment] = useState('');
-  const [category, setCategory] = useState('');
   const [addTransactions, { data }] = useAddTransactionsMutation();
+  const [category, setCategory] = useState('Expense');
 
   const toggleChange = e => {
     setChecked(e);
-    e ? setCategory(income) : setCategory('');
+    e ? setCategory(income) : setCategory('Expense');
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function ModalAddTransactions() {
       comment,
       sum,
       date,
-      transactionType,
+      isIncome: transactionType === 'income' ? true : false,
     });
   };
 
