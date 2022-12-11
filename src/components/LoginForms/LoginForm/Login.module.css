@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  padding: 110px 20px;
+  background-color: #ffffff;
+}
+.login__button {
+  margin-bottom: 20px;
+  margin-top: 40px;
+  width: 300px;
+  height: 50px;
+  font-family: 'Circe';
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #24cca7;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.registerLink__button {
+  font-family: 'Circe';
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  color: #4a56e2;
+  background-color: transparent;
+  border: 1px solid #4a56e2;
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 13px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-betweem;
+  align-items: center;
+  width: 280px;
+  margin-top: 60px;
+}
+@media (min-width: 768px) {
+  .container {
+    min-width: 410px;
+    padding: 40px 60px;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .container {
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

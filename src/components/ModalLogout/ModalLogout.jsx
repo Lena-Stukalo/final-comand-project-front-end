@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { logOut } from 'redux/auth/auth-operations';
+import operations from 'redux/auth/authOperation';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import {
@@ -10,7 +10,7 @@ import {
   ExitTitle,
 } from './ModalLogout.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#modal-logout-root');
 
 export const ModalLogout = ({ closeModal }) => {
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ export const ModalLogout = ({ closeModal }) => {
         <BtnYes
           type="button"
           onClick={() => {
-            dispatch(logOut());
+            dispatch(operations.logout());
             closeModal();
           }}
         >

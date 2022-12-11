@@ -4,11 +4,18 @@ import { fetchData } from './operations';
 const initialState = {
   isLoading: false,
   error: null,
+  isModalLogoutOpen: false,
 };
 
 const globalSlice = createSlice({
   name: 'global',
   initialState,
+
+  reducers: {
+    toggleModal: (store, _) => {
+      store.isModalLogoutOpen = !store.isModalLogoutOpen;
+    },
+  },
 
   extraReducers: {
     [fetchData.pending]: store => {
@@ -24,5 +31,7 @@ const globalSlice = createSlice({
     },
   },
 });
+
+export const { toggleModal } = globalSlice.actions;
 
 export const globalReducer = globalSlice.reducer;
