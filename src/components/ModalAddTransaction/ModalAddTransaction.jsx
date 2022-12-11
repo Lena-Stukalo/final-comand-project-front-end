@@ -76,7 +76,7 @@ export default function ModalAddTransactions() {
                 // type="number"
                 name="sum"
                 defaultValue={sum}
-                onChange={({ target }) => setSum(target.valueAsNumber)}
+                onChange={({ target }) => setSum(target.value)}
                 placeholder="0.00"
                 title="0.05, 0.50, 5.55, 50.50"
                 step="0.01"

@@ -6,7 +6,8 @@ import {
   statisticsColors,
   switchersOptions,
 } from 'transactionsComponentConstants/constants';
-import sprite from '../../../transactionsComponentIcons/sprite.svg';
+// import sprite from '../../../transactionsComponentIcons/sprite.svg';
+import Icon from '../Icon/Icon';
 
 function CategoriesDropbox({ select }) {
   const [selectOpened, setSelectOpened] = useState(false);
@@ -32,9 +33,15 @@ function CategoriesDropbox({ select }) {
           type="button"
           onClick={() => setSelectOpened(prevCheck => !prevCheck)}
         >
-          <svg>
+          {/* <svg>
             <use href={`${sprite}#icon-dropbox-select`} />
-          </svg>
+          </svg> */}
+          <Icon
+            width="18px"
+            height="9px"
+            stroke="currentColor"
+            iconName="icon-dropbox-select"
+          />
         </button>
       </Wrapper>
       {selectOpened && (
@@ -64,12 +71,12 @@ const Wrapper = styled.div`
   button {
     border: none;
     background: none;
-    svg {
-      position: relative;
-      right: 0;
-      width: 18px;
-      height: 9px;
-    }
+    // svg {
+    //   position: relative;
+    //   right: 0;
+    //   width: 18px;
+    //   height: 9px;
+    // }
   }
 `;
 const Div = styled.div`
