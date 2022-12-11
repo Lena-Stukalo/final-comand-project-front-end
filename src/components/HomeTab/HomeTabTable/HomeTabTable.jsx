@@ -1,4 +1,8 @@
+import EllipsisText from 'react-ellipsis-text';
+
 import { Table, THead, Tr, Th, Td } from './HomeTabTable.styled';
+
+const tooltip = 'true';
 
 const HomeTabTable = ({ data }) => {
   return (
@@ -19,7 +23,12 @@ const HomeTabTable = ({ data }) => {
             <Td>{item.date}</Td>
             <Td>{item.isIncome ? '+' : '-'}</Td>
             <Td>{item.category}</Td>
-            <Td>{item.comment ? item.comment : 'No comment'}</Td>
+            <Td>
+              <EllipsisText
+                text={item.comment ? item.comment : 'No comment'}
+                length={20}
+              />
+            </Td>
             <Td isIncome={item.isIncome}>{item.sum}</Td>
             <Td>{item.balance}</Td>
           </Tr>

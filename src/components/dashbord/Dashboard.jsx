@@ -5,7 +5,7 @@ export const Dashboard = () => {
   return (
     <div>
       <p>{'Dashboard'}</p>
-      {/* <HomeTab /> */}
+      {/* <HomeTab data={data} /> */}
       <Outlet />
     </div>
   );

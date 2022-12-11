@@ -1,3 +1,6 @@
+import { ownerWindow } from '@mui/material';
+import EllipsisText from 'react-ellipsis-text';
+
 import {
   TransactionsList,
   TransactionsListItem,
@@ -40,7 +43,13 @@ const HomeTabList = ({ data }) => {
               <PropertyListItem isIncome={item.isIncome}>
                 <PropertyListItemWrapper>
                   <Key>Comment</Key>
-                  <Value>{item.comment ? item.comment : 'No comment'}</Value>
+
+                  <Value>
+                    <EllipsisText
+                      text={item.comment ? item.comment : 'No comment'}
+                      length={20}
+                    />
+                  </Value>
                 </PropertyListItemWrapper>
               </PropertyListItem>
 
