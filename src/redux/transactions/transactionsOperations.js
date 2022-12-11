@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import * as api from '../../api/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 axios.defaults.baseURL =
   'https://final-comand-project-back-end-production.up.railway.app/api';
+
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -17,11 +17,8 @@ const categories = createAsyncThunk(
   '/transactions/categories',
   async credentials => {
     try {
-      const { data } = await axios.post(
-        '/transactions/categories',
-        credentials
-      );
-      return data;
+      const { data } = await axios.get('/transactions/categories', credentials);
+      return data.categories;
     } catch ({ response }) {
       Notify.failure(`${response.status}: ${response.data.message}`);
     }
@@ -38,3 +35,8 @@ const statistic = createAsyncThunk(
     }
   }
 );
+const operations = {
+  statistic,
+  categories,
+};
+export default operations;
