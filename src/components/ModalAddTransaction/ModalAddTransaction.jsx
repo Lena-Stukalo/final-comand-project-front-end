@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import styled from 'styled-components';
 import 'react-datetime/css/react-datetime.css';
 
-import { useCreateTransactionsMutation } from 'transactionsRedux/transactionsOperations';
+import { useAddTransactionsMutation } from 'transactionsRedux/transactionsOperations';
 import {
   addTransactionSuccess,
   closeModalWindow,
@@ -28,7 +28,7 @@ export default function ModalAddTransactions() {
   const [sum, setSum] = useState();
   const [comment, setComment] = useState('');
   const [category, setCategory] = useState('');
-  const [addTransactions, { data }] = useCreateTransactionsMutation();
+  const [addTransactions, { data }] = useAddTransactionsMutation();
 
   const toggleChange = e => {
     setChecked(e);
