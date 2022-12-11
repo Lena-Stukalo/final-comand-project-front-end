@@ -1,58 +1,71 @@
-.main__image_desktop {
-        display: none;
-    }
+.main__image_desktop,
+.main__image {
+  display: none;
+}
 
 .app__title {
-    margin: 0;
+  display: none;
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        background-color: #E5E5E5;
-        background-image: url('../../images/bg-ellipse.png'), url('../../images//bg-ellipse2.png');
-        background-repeat: no-repeat;
-        background-position-x: right, left;
-        background-position-y: top, bottom;
-        padding-left: 118px;
-        padding-right: 118px;
-        padding-top: 60px;
-        padding-bottom: 48px;
-    }
+  .container {
+    background-color: #e5e5e5;
+    background-image: url('../../images/bg-ellipse.png'),
+      url('../../images//bg-ellipse2.png');
+    background-repeat: no-repeat;
+    background-position-x: right, left;
+    background-position-y: top, bottom;
+    padding-left: 118px;
+    padding-right: 118px;
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
 
-    .title__box {
-        display: flex;
-        align-items: center;
-        margin-bottom: 50px;
-    }
+  .title__box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+  }
 
+  .main__image {
+    display: block;
+  }
+
+  .app__title {
+    display: block;
+  }
 }
 
 /* Desktop */
 
 @media screen and (min-width: 1280px) {
-    .container {
-        align-items: center;
-        background-image: url('../../images/blur-bg.png'), url('../../images//bg-ellipse2.png');
-        background-position-x: right, left;
-        background-position-y: top, bottom;
-        background-size: 731px 100%, 500px auto;
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-        padding: 52px 91px 52px 107px;
-    }
-    .title__box {
-        margin-bottom: 0;
-        flex-direction: column;
-        position: relative;
-        bottom: -50px;
-    }
+  .container {
+    align-items: center;
+    background-image: url('../../images/blur-bg.png'),
+      url('../../images//bg-ellipse2.png');
+    background-position-x: right, left;
+    background-position-y: top, bottom;
+    background-size: 731px 100%, 500px auto;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 91px;
+    padding-left: 107px;
+    height: 100vh;
+  }
+  .title__box {
+    margin-bottom: 0;
+    flex-direction: column;
+    position: relative;
+    bottom: -50px;
+  }
 
-    .main__image {
-        display: none;
-    }
+  .main__image {
+    display: none;
+  }
 
-    .main__image_desktop {
-        display: block;
-    }
+  .main__image_desktop {
+    display: block;
+  }
 }
