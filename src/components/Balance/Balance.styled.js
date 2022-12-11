@@ -8,7 +8,7 @@ export const Box = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 32px;
-  background-color: var(--white);
+  background-color: white;
   @media ${device.tablet} {
     width: 336px;
   }

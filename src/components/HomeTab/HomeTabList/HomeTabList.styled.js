@@ -6,6 +6,8 @@ const color = p => {
 
 export const TransactionsList = styled.ul`
   width: 280px;
+
+  margin-top: 32px;
 `;
 
 export const TransactionsListItem = styled.li`

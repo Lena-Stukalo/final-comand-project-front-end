@@ -18,8 +18,11 @@ import ellipseRightD from './ellipse-rightD.svg';
 import diagram from './diagram.svg';
 import diagramTab from './diagramTab.svg';
 import diagramMob from './diagramMob.svg';
-import eye from './eye.svg'
-import eyeClose from './eyeClose.svg'
+import eye from './eye.svg';
+import eyeClose from './eyeClose.svg';
+import NavHomeIcon from './NavHomeIcon';
+import NavStatisticsIcon from './NavStatisticsIcon';
+import NavCurrencyIcon from './NavCurrencyIcon';
 
 export {
   logo,
@@ -43,5 +46,7 @@ export {
   diagramTab,
   diagramMob,
   eye,
-eyeClose
+  eyeClose,
 };
+
+export const navIcons = { NavHomeIcon, NavStatisticsIcon, NavCurrencyIcon };

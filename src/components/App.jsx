@@ -7,7 +7,10 @@ import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
 import { Currency } from './currency/Currency';
+import HomePage from 'pages/HomePage';
 import LoginPage from 'pages/LoginPage';
+
+import Layout from './Layout/Layout';
 
 export const App = () => {
   return (
@@ -18,8 +21,8 @@ export const App = () => {
           <Route path="register" element={<RegisterPage />} />
         </Route>
         <Route element={<PrivatRoute />}>
-          <Route path="/" element={<Dashboard />}>
-            <Route path="home" element={<Header />} />
+          <Route path="/" element={<Layout />}>
+            <Route path="home" element={<HomePage />} />
             <Route path="diagram" element={<Header />} />
             <Route path="currency" element={<Currency />} />
           </Route>
