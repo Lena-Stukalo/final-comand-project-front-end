@@ -1,9 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
+import AuthSelectors from '../redux/auth/authSelectors';
 
 const useAuth = () => {
-
-    const isAuth = useSelector(state => state.auth.isLogin);
-    return isAuth;
+  const isAuth = useSelector(AuthSelectors.getIsLoggedIn);
+  return isAuth;
 };
 
 export default useAuth;
