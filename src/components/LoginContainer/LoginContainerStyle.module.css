@@ -21,7 +21,6 @@
     padding-right: 118px;
     padding-top: 60px;
     padding-bottom: 48px;
-    height: 100%;
   }
 
   .title__box {
@@ -58,7 +57,7 @@
     justify-content: space-between;
     padding-right: 91px;
     padding-left: 107px;
-    height: 720px;
+    height: 100vh;
   }
   .title__box {
     margin-bottom: 0;
