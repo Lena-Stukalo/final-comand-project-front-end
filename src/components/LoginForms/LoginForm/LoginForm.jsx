@@ -1,26 +1,26 @@
 import React from 'react';
 // import { useDispatch } from 'react-redux';
 // import { authOperations } from 'redux/auth';
-
+import { NavLink } from 'react-router-dom';
 import css from './Login.module.css';
 
 import Logo from '../../Logo/Logo';
 import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
 import FormBtn from '../FromBtn/FormBtn';
+import FormBtnLink from '../FromBtn/FormBtnLink';
 
 import EmailInput from '../LoginInput/EmailInput/Input';
 import PasswordInput from '../LoginInput/PasswordInput/PasswordInput.jsx';
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { initialState } from 'components/RegistrationForm/initialState';
 import useForm from 'hooks/useForm';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
     .matches(/\b[\w.-]+@[\w.-]+\.\w{2,4}\b/, 'Invalid email address')
-    .required('Reqyired'),
+    .required('Required'),
   password: Yup.string()
     .min(6, 'Too Short!')
     .max(16, 'Too Long!')
@@ -28,7 +28,6 @@ const validationSchema = Yup.object().shape({
 });
 
 const LoginForm = ({ onSubmit }) => {
-  // const dispatch = useDispatch();
   const initialState = {
     email: '',
     password: '',
@@ -73,14 +72,19 @@ const LoginForm = ({ onSubmit }) => {
           helper={formik.errors.password}
           error={formik.touched.password && Boolean(formik.errors.password)}
         />
-        <FormBtn
+        <button
+          className={css.login__button}
           title={'LOG IN'}
           variant="contained"
           type="submit"
           color="#24CCA7"
-        />
+        >{`log in`}</button>
       </form>
-      <FormBtn title={'Register'} variant="outlined" mb="0px" href={'#'} />
+      <FormBtnLink
+        text={'Register'}
+        path="/register"
+        style={css.registerLink__button}
+      />
     </div>
   );
 };
