@@ -7,6 +7,7 @@ import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
 import { Currency } from './currency/Currency';
+import StatisticPage from 'pages/StatisticPage/StatisticPage';
 import LoginPage from 'pages/LoginPage';
 
 export const App = () => {
@@ -20,7 +21,7 @@ export const App = () => {
         <Route element={<PrivatRoute />}>
           <Route path="/" element={<Dashboard />}>
             <Route path="home" element={<Header />} />
-            <Route path="diagram" element={<Header />} />
+            <Route path="diagram" element={<StatisticPage />} />
             <Route path="currency" element={<Currency />} />
           </Route>
         </Route>

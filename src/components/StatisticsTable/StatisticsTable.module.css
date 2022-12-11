@@ -1,163 +1,143 @@
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (min-width: 320px) {
-
-
-tr {
+  tr {
     width: 280px;
+  }
 
-}
-
-th {
+  th {
     /* border: 1px solid #d8e0ea; */
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     font-family: 'Circe';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.5;
 
-
     color: #000000;
+  }
 
-}
-
-td {
-    border-bottom: 1px solid #DCDCDF;
+  td {
+    border-bottom: 1px solid #dcdcdf;
     box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
     font-weight: 400;
     font-size: 15px;
     padding: 14px 0 14px 0;
+  }
 
-}
+  .tableWrapper {
+    background-color: transparent;
+  }
 
-.tableWrapper {
-    background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(25px);
-        background-image: url('./image/Rectangle3.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;
-}
-
-
-.transactionHistory {
+  .transactionHistory {
     color: rgb(8, 8, 8);
     width: 280px;
     border-collapse: collapse;
     /* border: 1px solid #d8e0ea; */
     /* text-align: center; */
     margin: auto auto;
-   
-}
-.categoryTitleWrapper {
-    display: flex;   
+    background-color: transparent;
+  }
+  .categoryTitleWrapper {
+    display: flex;
     padding-top: 16px;
     padding-bottom: 16px;
-}
+  }
 
-.categoryTitle {
+  .categoryTitle {
     margin-left: 20px;
     font-family: 'Circe';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 1.5;
-          
-    
-        color: #000000;
-}
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
 
-.sumTitleWrapper {
-    display: flex;    
+    color: #000000;
+  }
+
+  .sumTitleWrapper {
+    display: flex;
     justify-content: flex-end;
     padding-top: 16px;
-        padding-bottom: 16px;
-}
+    padding-bottom: 16px;
+  }
 
-.sumTitle {
+  .sumTitle {
     margin-right: 20px;
     font-family: 'Circe';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 1.5;     
-    
-    
-        color: #000000;
-}
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
 
-.categoryTh {  
+    color: #000000;
+  }
 
-border-radius: 30px 0 0 30px;
-}
+  .categoryTh {
+    border-radius: 30px 0 0 30px;
+  }
 
-.sumTh {
-border-radius: 0 30px 30px 0;
-}
+  .sumTh {
+    border-radius: 0 30px 30px 0;
+  }
 
-
-.statisticColors {
+  .statisticColors {
     margin-left: 20px;
     width: 24px;
     height: 24px;
-}
+  }
 
-.statisticWrappers {
+  .statisticWrappers {
     display: flex;
     align-items: center;
-}
+  }
 
-.categoryText {
+  .categoryText {
     margin-left: 16px;
     font-family: 'Circe';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.5;    
-    
-    
-        color: #000000;
-}
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
 
-.incomeText {
-   margin-left: 20px;
-font-family: 'Circe';
+    color: #000000;
+  }
+
+  .incomeText {
+    margin-left: 20px;
+    font-family: 'Circe';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
 
     color: #000000;
-}
+  }
 
-
-.categoryWrappers {
+  .categoryWrappers {
     display: flex;
     justify-content: flex-end;
-}
+  }
 
-
-.categoryValue {
+  .categoryValue {
     margin-right: 20px;
     font-family: 'Circe';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;  
-    
-       
-    
-        color: #000000;
-}
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 
-.valueWrapp {
+    color: #000000;
+  }
+
+  .valueWrapp {
     display: flex;
     justify-content: flex-end;
-}
-.expensesValue {
+  }
+  .expensesValue {
     margin-right: 20px;
     font-family: 'Circe';
     font-style: normal;
@@ -165,34 +145,28 @@ font-family: 'Circe';
     font-size: 16px;
     line-height: 1.5;
 
-    color: #FF6596;
-}
-.incomeValue {
+    color: #ff6596;
+  }
+  .incomeValue {
     margin-right: 20px;
     font-family: 'Circe';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.5;
-           
-        color: #24CCA7;
-    
-}
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
 
+    color: #24cca7;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .transactionHistory {
-        width: 336px;
-    }
-
-      
-
+  .transactionHistory {
+    width: 336px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-.transactionHistory {
-        width: 395px;
-    }
-      
+  .transactionHistory {
+    width: 395px;
+  }
 }
