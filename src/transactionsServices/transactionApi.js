@@ -4,7 +4,7 @@ export const axiosBaseQuery =
   ({ baseUrl } = { baseUrl: '' }) =>
   async ({ url, method, data }) => {
     try {
-      const result = await axios({ url: `$${baseUrl}${url}`, method, data });
+      const result = await axios({ url: `${baseUrl}${url}`, method, data });
 
       return { data: result.data };
     } catch (axiosError) {

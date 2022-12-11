@@ -4,10 +4,17 @@ import { BASE_URL, ROUTES } from 'transactionsComponentConstants/constants';
 
 const { API, TRANSACTIONS } = ROUTES;
 
+const TOKEN =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTU5NDMxMjk2YTAwZDcyZjdhM2E0MSIsImlhdCI6MTY3MDc0NzI0MywiZXhwIjoxNjcwODMzNjQzfQ.H5geRVutwDQSFeC7IZjBNnJHkBb4l52L6B7juXFZR7A';
+
 export const transactionsApi = createApi({
   reducerPath: 'transactionApi',
   baseQuery: axiosBaseQuery({
     baseUrl: BASE_URL.SERVER,
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer' + TOKEN,
+    },
     refetchOnReconnect: true,
   }),
 
@@ -15,7 +22,7 @@ export const transactionsApi = createApi({
   endpoints: builder => ({
     getTransactions: builder.query({
       query: () => ({
-        url: `/${API}/${TRANSACTIONS}`,
+        url: `${API}/${TRANSACTIONS}`,
         method: 'GET',
       }),
       providesTags: (result, error, arg) =>
@@ -26,7 +33,7 @@ export const transactionsApi = createApi({
 
     addTransactions: builder.mutation({
       query: data => ({
-        url: `/${API}/${TRANSACTIONS}`,
+        url: `${API}/${TRANSACTIONS}`,
         method: 'POST',
         data,
       }),
