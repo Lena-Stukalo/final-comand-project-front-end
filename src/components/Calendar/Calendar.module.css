@@ -1,0 +1,100 @@
+@media screen and (min-width: 320px) {
+    .wrapperMonth {
+            margin: 0 auto;
+            
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            max-width: 240px;
+            height: 50px;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
+            border: 1px solid #000000;
+    
+        }
+
+        .wrapperYear {
+            margin-top: 20px;
+        }
+
+        .calendarText {
+            font-family: 'Circe';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.5;
+                           
+            
+                color: #000000;
+        }
+
+                
+}
+
+@media screen and (min-width: 768px) {
+    .wrappCalendar {
+        margin: 0 auto;
+        max-width: 336px;
+        display: flex;
+    }
+    .wrapperMonth {
+            width: 120px;
+            /* margin-left: 16px; */
+        }
+    
+        .wrapperYear {
+            margin-top: 0;
+            margin-left: 16px;
+        }
+
+                .datetime {
+                    margin-top: 15px;
+                }
+        
+                .datetimeYear {
+                    margin-top: 15px;
+                    margin-left: 32px;
+                }
+
+}
+
+@media screen and (min-width: 1280px) {
+    .wrappCalendar {
+        margin: 0 auto;
+        max-width: 395px;
+        display: flex;
+    }
+
+    .wrapperMonth {
+        width: 141px;
+        /* margin-left: 16px; */
+    }
+
+    .wrapperYear {
+        margin-top: 0;
+        margin-left: 32px;
+    }
+
+        .datetime {
+            margin-top: 15px;
+        }
+    
+        .datetimeYear {
+            
+            margin-top: 15px;
+            margin-left: 32px;
+
+            
+        }
+
+}
+
+/* .ddd {
+    width: 181px;
+        height: 50px;       
+    
+        border: 1px solid #000000;
+        border-radius: 30px;
+} */
