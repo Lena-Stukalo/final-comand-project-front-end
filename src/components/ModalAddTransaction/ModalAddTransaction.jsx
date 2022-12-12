@@ -18,7 +18,7 @@ import Modal from './Modal/Modal';
 import { switchersOptions } from 'transactionsComponentConstants/constants';
 import sprite from '../../transactionsComponentIcons/sprite.svg';
 
-const { income, transactionsTypeIncome, transactionsTypeExpense } =
+const { transactionsTypeIncome, transactionsTypeExpense, expense } =
   switchersOptions;
 
 export default function ModalAddTransactions() {
@@ -28,11 +28,11 @@ export default function ModalAddTransactions() {
   const [sum, setSum] = useState();
   const [comment, setComment] = useState('');
   const [addTransactions, { data }] = useAddTransactionsMutation();
-  const [category, setCategory] = useState('Expense');
+  const [category, setCategory] = useState(expense);
 
   const toggleChange = e => {
     setChecked(e);
-    e ? setCategory(income) : setCategory('Expense');
+    e ? setCategory(transactionsTypeIncome) : setCategory(expense);
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function ModalAddTransactions() {
       comment,
       sum,
       date,
-      isIncome: transactionType === 'income' ? true : false,
+      isIncome: transactionType === transactionsTypeIncome ? true : false,
     });
   };
 

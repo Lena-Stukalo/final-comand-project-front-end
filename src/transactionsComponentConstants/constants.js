@@ -2,7 +2,7 @@ const switchersOptions = {
   income: 'Income',
   expense: 'Expense',
   transactionsTypeIncome: 'income',
-  transactionsTypeExpense: 'expenses',
+  transactionsTypeExpense: 'expense',
 };
 
 const statisticsColors = [
