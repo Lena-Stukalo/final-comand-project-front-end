@@ -10,8 +10,6 @@ import {
   Tbody,
 } from './HomeTabTable.styled';
 
-const tooltip = 'true';
-
 const HomeTabTable = ({ data }) => {
   return (
     <Container>

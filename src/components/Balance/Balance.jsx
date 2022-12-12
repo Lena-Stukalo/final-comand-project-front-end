@@ -9,15 +9,13 @@ export const Balance = () => {
   // const afterTransactions = useSelector(getBalanceByTransactionsSelector);
   const [balance, setBalance] = useState(userBalance);
   // useEffect(() => {
-  //   if (afterTransactions) {
-  //     setBalance(afterTransactions);
-  //   }
-  // }, [afterTransactions]);
+  //   setBalance(balance);
+  // }, [setBalance]);
 
   return (
     <Box>
       <Title>Your balance</Title>
-      <Amount>&#8372; {balance.toFixed(2)}</Amount>
+      <Amount>&#8372; {userBalance.toFixed(2)}</Amount>
     </Box>
   );
 };
