@@ -22,17 +22,15 @@ export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/">
-          <Route element={<PublicRoute />}>
-            <Route path="login" element={<LoginPage />} />
-            <Route path="register" element={<RegisterPage />} />
-          </Route>
-          <Route element={<PrivatRoute />}>
-            <Route path="/" element={<Dashboard />}>
-              <Route path="home" element={<Header />} />
-              <Route path="diagram" element={<StatisticPage />} />
-              <Route path="currency" element={<Currency />} />
-            </Route>
+        <Route element={<PublicRoute />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+        <Route element={<PrivatRoute />}>
+          <Route path="/" element={<Dashboard />}>
+            <Route path="home" element={<Header />} />
+            <Route path="diagram" element={<StatisticPage />} />
+            <Route path="currency" element={<Currency />} />
           </Route>
         </Route>
       </Routes>

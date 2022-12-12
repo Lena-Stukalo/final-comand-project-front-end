@@ -3,9 +3,9 @@ import authOperation from './authOperation';
 const initialState = {
   user: { name: null, email: null, balance: 0 },
   token: null,
-  isLoggedIn: true,
+  isLoggedIn: false,
   error: false,
-  isRefreshing: true,
+  isRefreshing: false,
 };
 const authSlice = createSlice({
   name: 'auth',
