@@ -9,7 +9,7 @@ export const StatisticPage = () => {
   return isRefreshing ? (
     <Spinner />
   ) : (
-    <div>
+    <div className={css.container}>
       <h2 className={css.statisticTitle}>Statistics</h2>
       <StatisticContainer />
     </div>

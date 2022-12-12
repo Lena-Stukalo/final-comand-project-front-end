@@ -20,14 +20,14 @@ const StatisticsTable = ({ statistic }) => {
     <div>
       <table className={style.transactionHistory}>
         <thead>
-          <tr>
+          <tr className={style.tr}>
             {/* <th><p>Category</p><p>Sum</p></th>           */}
-            <th className={style.categoryTh}>
+            <th className={`${style.categoryTh} ${style.th}`}>
               <div className={style.categoryTitleWrapper}>
                 <p className={style.categoryTitle}>Category</p>
               </div>
             </th>
-            <th className={style.sumTh}>
+            <th className={`${style.sumTh} ${style.th}`}>
               <div className={style.sumTitleWrapper}>
                 <p className={style.sumTitle}>Sum</p>
               </div>
@@ -37,8 +37,8 @@ const StatisticsTable = ({ statistic }) => {
 
         <tbody>
           {statistic.map(item => (
-            <tr key={item.color}>
-              <td>
+            <tr key={item.color} className={style.tr}>
+              <td className={style.td}>
                 <div className={style.statisticWrappers}>
                   <div
                     className={style.statisticColors}
@@ -50,28 +50,28 @@ const StatisticsTable = ({ statistic }) => {
               </td>
               {/* <td>{item.title}</td> */}
               {/* <td><p className={style.categoryValue}>{item.value}</p></td> */}
-              <td>
+              <td className={style.td}>
                 <div className={style.categoryWrappers}>
                   <p className={style.categoryValue}>{item.value}</p>
                 </div>
               </td>
             </tr>
           ))}
-          <tr>
-            <td>
+          <tr className={style.tr}>
+            <td className={style.td}>
               <p className={style.incomeText}>Expenses:</p>
             </td>
-            <td>
+            <td className={style.td}>
               <div className={style.valueWrapp}>
                 <p className={style.expensesValue}>{expenses}</p>
               </div>
             </td>
           </tr>
-          <tr>
-            <td>
+          <tr className={style.tr}>
+            <td className={style.td}>
               <p className={style.incomeText}>Income:</p>
             </td>
-            <td>
+            <td className={style.td}>
               <div className={style.valueWrapp}>
                 <p className={style.incomeValue}>{income}</p>
               </div>
