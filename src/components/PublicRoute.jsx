@@ -6,7 +6,7 @@ export default function PublicRoute() {
   const IsLoggedIn = useSelector(AuthSelectors.getIsLoggedIn);
 
   if (IsLoggedIn) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/diagram" />;
   }
 
   return <Outlet />;
