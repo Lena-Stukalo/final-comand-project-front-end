@@ -4,6 +4,7 @@ import * as api from '../../api/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 axios.defaults.baseURL =
   'https://final-comand-project-back-end-production.up.railway.app/api';
+
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
