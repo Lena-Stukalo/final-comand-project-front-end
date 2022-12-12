@@ -11,7 +11,9 @@ import {
 } from 'redux-persist';
 import { globalReducer } from './data/globalSlice';
 import authReducer from './auth/authSlice';
+import transactionReduser from './transactions/transactionSlice';
 import storage from 'redux-persist/lib/storage';
+import thunk from 'redux-thunk';
 
 const persistConfig = {
   key: 'auth',
@@ -22,14 +24,16 @@ const persistedReducer = persistReducer(persistConfig, authReducer);
 
 export const store = configureStore({
   reducer: {
-    global: globalReducer,
+    transactions: transactionReduser,
     auth: persistedReducer,
+    global: globalReducer,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
+  middleware: getDefaultMiddleware => [
+    ...getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+  ],
 });
 export const persistor = persistStore(store);
