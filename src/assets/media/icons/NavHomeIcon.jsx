@@ -25,6 +25,13 @@ export default NavHomeIcon;
 export const Svg = styled.svg`
   background-color: white;
   border-radius: 6px;
+
+  @media screen and (min-width: 768px) {
+    width: 18px;
+    height: 18px;
+
+    border-radius: 4px;
+  }
 `;
 
 export const Path = styled.path`

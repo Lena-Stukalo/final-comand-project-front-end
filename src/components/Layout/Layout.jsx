@@ -6,7 +6,6 @@ import { Container } from './Layout.styled';
 
 const Layout = () => {
   const location = useLocation();
-  console.log(location);
 
   if (location.pathname === '/') {
     return <Navigate to="/home" />;
@@ -15,8 +14,9 @@ const Layout = () => {
   return (
     <Container>
       <Header />
-      <Dashboard />
-      <Outlet />
+      <Dashboard>
+        <Outlet />
+      </Dashboard>
     </Container>
   );
 };

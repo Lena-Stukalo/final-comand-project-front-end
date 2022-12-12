@@ -8,6 +8,9 @@ export const TransactionsList = styled.ul`
   width: 280px;
 
   margin-top: 32px;
+
+  max-height: 80vw;
+  overflow-y: scroll;
 `;
 
 export const TransactionsListItem = styled.li`

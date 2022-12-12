@@ -528,6 +528,19 @@ const Container = styled.div`
   width: 320px;
 
   margin: 0 auto;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 46px;
+
+    margin: 0;
+  }
 `;
 
 export default HomePage;

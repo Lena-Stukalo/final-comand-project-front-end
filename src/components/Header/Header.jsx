@@ -20,7 +20,7 @@ const Header = () => {
   const userName = useSelector(AuthSelectors.getUserName);
 
   return (
-    <header>
+    <header className={css.header}>
       <div className={css.container}>
         <nav className={css.nav}>
           <Logo path="/home" />

@@ -19,6 +19,8 @@ export const Box = styled.div`
   }
   @media ${device.desktop} {
     width: 395px;
+
+    margin-bottom: 32px;
   }
 `;
 
