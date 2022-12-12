@@ -1,0 +1,72 @@
+.CurrencyTable {
+  border-radius: 30px;
+  background: #4a56e2;
+  /* padding-bottom: 15px; */
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  text-align: center;
+  background-image: url(./Vector\ 7.svg),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 50px, #4a56e2 50px);
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  align-self: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableCells {
+  display: block;
+}
+.div {
+  height: 300px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+@media screen and (min-width: 768px) {
+  .CurrencyTable {
+    width: 336px;
+
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .CurrencyTable {
+    width: 393px;
+    height: 347px;
+    /* padding: 5px 40px 16px 40px; */
+    background-image: url(./Vector\ 7.svg),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 60px, #4a56e2 60px);
+  }
+  .TableText {
+    text-align: center;
+  }
+  .row {
+    padding: 15px 40px;
+  }
+}
+
+.TableText {
+  font-family: 'Circe';
+  font-style: normal;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: left;
+}
+.headTableText {
+  font-weight: 700;
+  font-size: 18px;
+}
+.bodyTableText {
+  font-weight: 400;
+  font-size: 16px;
+}
