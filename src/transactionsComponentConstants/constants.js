@@ -2,7 +2,7 @@ const switchersOptions = {
   income: 'Income',
   expense: 'Expense',
   transactionsTypeIncome: 'income',
-  transactionsTypeExpense: '',
+  transactionsTypeExpense: 'expense',
 };
 
 const statisticsColors = [
@@ -17,4 +17,16 @@ const statisticsColors = [
   { category: 'Other expenses', color: '#FD9498' },
 ];
 
-export { switchersOptions, statisticsColors };
+const ROUTES = {
+  API: 'api',
+  USERS: 'users',
+  TRANSACTIONS: 'transactions',
+};
+
+const BASE_URL = {
+  FRONT: 'http://localhost:3000',
+  BACK: 'http://localhost:8000',
+  SERVER: 'https://final-comand-project-back-end-production.up.railway.app/',
+};
+
+export { switchersOptions, statisticsColors, ROUTES, BASE_URL };

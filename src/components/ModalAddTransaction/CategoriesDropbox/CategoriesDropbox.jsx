@@ -67,6 +67,7 @@ const Wrapper = styled.div`
     svg {
       position: relative;
       right: 0;
+      margin-right: 30px;
       width: 18px;
       height: 9px;
     }
@@ -80,6 +81,7 @@ const Div = styled.div`
 const H2 = styled.h2`
   font-weight: 400;
   font-size: 18px;
+  margin: 0;
   color: ${p => (p.select ? '#000000' : '#bdbdbd')};
 `;
 const Ul = styled.ul`
@@ -100,12 +102,11 @@ const Li = styled.li`
   padding: 0 20px 0 20px;
   display: flex;
   align-items: center;
-  font-family: 'Circe';
+font-family: 'Circe, Manrope, sans-serif';
 font-style: normal;
 font-weight: 400;
 font-size: 18px;
-  font-weight: 400;
-   line-height: 1.5;
+ line-height: 1.5;
   &:hover,
   &:focus {
     font-weight: 700;

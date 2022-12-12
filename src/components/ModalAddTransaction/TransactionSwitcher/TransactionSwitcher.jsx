@@ -45,7 +45,8 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  // max-width: 235px;
+  max-width: 235px;
+  margin-bottom: 42px;
 `;
 const Span = styled.span`
   font-weight: 700;
