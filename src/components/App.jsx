@@ -14,15 +14,19 @@ import operations from 'redux/auth/authOperation';
 import AuthSelectors from 'redux/auth/authSelectors';
 
 import Layout from './Layout/Layout';
+import Spinner from './Spinner/Spinner';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(AuthSelectors.getIsRefreshing);
 
   useEffect(() => {
     dispatch(operations.currentUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <Spinner />
+  ) : (
     <div>
       <Routes>
         <Route element={<PublicRoute />}>
