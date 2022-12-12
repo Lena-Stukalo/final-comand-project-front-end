@@ -8,7 +8,12 @@ import HomeTabTable from './HomeTabTable/HomeTabTable';
 const HomeTab = ({ data }) => {
   const regExNoDots = /[^\d]/g;
 
-  const filteredData = data.sort(
+  const dataToSotr = [...data];
+  // if (data.length === 0) {
+  //   return <>nodata</>;
+  // }
+
+  const filteredData = dataToSotr.sort(
     (firstEl, secondEl) =>
       secondEl.date.replace(regExNoDots, '') -
       firstEl.date.replace(regExNoDots, '')

@@ -3,6 +3,7 @@ import operations from './transactionsOperations';
 const transactionsSlice = createSlice({
   name: 'transactions',
   initialState: {
+    data: [],
     categories: [],
     details: [],
     isLoading: false,
@@ -30,6 +31,18 @@ const transactionsSlice = createSlice({
       state.details = action.payload;
     },
     [operations.statistic.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    [operations.fetchTransactions.pending](state) {
+      state.isLoading = true;
+    },
+    [operations.fetchTransactions.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = null;
+      state.data = action.payload;
+    },
+    [operations.fetchTransactions.rejected](state, action) {
       state.isLoading = false;
       state.error = action.payload;
     },

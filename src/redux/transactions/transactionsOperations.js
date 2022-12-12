@@ -35,8 +35,24 @@ const statistic = createAsyncThunk(
     }
   }
 );
+
+const fetchTransactions = createAsyncThunk(
+  'transactions/fetch',
+
+  async () => {
+    try {
+      const { data } = await axios.get('/transactions');
+      // console.log(data);
+      return data;
+    } catch ({ response }) {
+      Notify.failure(`${response.status}: ${response.data.message}`);
+    }
+  }
+);
+
 const operations = {
   statistic,
   categories,
+  fetchTransactions,
 };
 export default operations;
