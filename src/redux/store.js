@@ -13,7 +13,7 @@ import { globalReducer } from './data/globalSlice';
 import authReducer from './auth/authSlice';
 import transactionReduser from './transactions/transactionSlice';
 import storage from 'redux-persist/lib/storage';
-import thunk from 'redux-thunk';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 const persistConfig = {
   key: 'auth',
@@ -37,3 +37,4 @@ export const store = configureStore({
   ],
 });
 export const persistor = persistStore(store);
+setupListeners(store.dispatch);

@@ -8,6 +8,5 @@ export default function PublicRoute() {
   if (IsLoggedIn) {
     return <Navigate to="/home" />;
   }
-
   return <Outlet />;
 }
