@@ -28,7 +28,6 @@ export const StatisticContainer = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(operations.categories());
     dispatch(operations.statistic());
   }, [dispatch]);
 
