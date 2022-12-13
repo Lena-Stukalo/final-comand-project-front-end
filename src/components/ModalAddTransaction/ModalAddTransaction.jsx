@@ -80,7 +80,7 @@ export default function ModalAddTransactions() {
       <div>
         <Title>Add transaction</Title>
         <Form onSubmit={handleSubmit}>
-          <label border>
+          <label border="true">
             <TransactionSwitcher check={toggleChange} />
           </label>
           {!checked && (
