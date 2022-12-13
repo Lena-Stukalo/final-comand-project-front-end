@@ -20,7 +20,6 @@ const RegistrationForm = ({ onSubmit }) => {
     validationSchema: RegistrationSchema,
 
     onSubmit: values => {
-      console.log(values);
       setState(values);
 
       onSubmit(values);
