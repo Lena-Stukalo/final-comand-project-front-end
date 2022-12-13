@@ -6,7 +6,7 @@ import HomeTab from 'components/HomeTab/HomeTab';
 import { useEffect } from 'react';
 
 const HomePage = () => {
-  const data = useSelector(TransSelectors.getTransactions);
+  const data = useSelector(TransSelectors.getFilteredTransactions);
   const dispatch = useDispatch();
 
   useEffect(() => {

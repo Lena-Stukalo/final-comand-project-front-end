@@ -6,19 +6,6 @@ import HomeTabList from './HomeTabList/HomeTabList';
 import HomeTabTable from './HomeTabTable/HomeTabTable';
 
 const HomeTab = ({ data }) => {
-  const regExNoDots = /[^\d]/g;
-
-  const dataToSotr = [...data];
-  // if (data.length === 0) {
-  //   return <>nodata</>;
-  // }
-
-  const filteredData = dataToSotr.sort(
-    (firstEl, secondEl) =>
-      secondEl.date.replace(regExNoDots, '') -
-      firstEl.date.replace(regExNoDots, '')
-  );
-
   return (
     <>
       <Media
@@ -29,9 +16,9 @@ const HomeTab = ({ data }) => {
         {matches => (
           <>
             {!matches.medium ? (
-              <HomeTabList data={filteredData} />
+              <HomeTabList data={data} />
             ) : (
-              <HomeTabTable data={filteredData} />
+              <HomeTabTable data={data} />
             )}
           </>
         )}
