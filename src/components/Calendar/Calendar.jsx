@@ -19,11 +19,16 @@ const Calendar = ({ setMonthAmount, setYearAmount }) => {
     setMonth(false);
   };
   const onMounthCange = e => {
-    const choosenOne = e._d.getMonth() + 1;
+    setYearAmount('');
+    let choosenOne = e._d.getMonth() + 1;
+    if (choosenOne < 10) {
+      choosenOne = '0' + choosenOne;
+    }
     setMonthAmount(choosenOne.toString());
   };
 
   const onYearChange = e => {
+    setMonthAmount('');
     const choosenOne = e._d.getFullYear().toString();
     setYearAmount(choosenOne);
   };
