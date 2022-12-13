@@ -57,7 +57,7 @@ input:invalid {
 }
 
 .form__label:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .icon {
