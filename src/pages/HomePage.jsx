@@ -6,12 +6,7 @@ import HomeTab from 'components/HomeTab/HomeTab';
 import { useEffect } from 'react';
 
 const HomePage = () => {
-  const data = useSelector(TransSelectors.getTransactions);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(operations.fetchTransactions());
-  }, [dispatch]);
+  const data = useSelector(TransSelectors.getFilteredTransactions);
 
   return (
     <Container>
