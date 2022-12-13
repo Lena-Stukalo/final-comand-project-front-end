@@ -7,11 +7,6 @@ import { useEffect } from 'react';
 
 const HomePage = () => {
   const data = useSelector(TransSelectors.getTransactions);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(operations.fetchTransactions());
-  }, [dispatch]);
 
   return (
     <Container>

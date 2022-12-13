@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const DashboardContainer = styled.div`
+  height: 100vw;
+
+  @media screen and (min-width: 768px) {
+    height: 50vw;
+  }
   @media screen and (min-width: 1280px) {
     display: flex;
 
@@ -18,7 +23,6 @@ export const Container = styled.div`
   padding-top: 12px;
   padding-right: 20px;
   padding-left: 20px;
-
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
