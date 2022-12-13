@@ -14,6 +14,8 @@ import authReducer from './auth/authSlice';
 import transactionReduser from './transactions/transactionSlice';
 import storage from 'redux-persist/lib/storage';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import { globalAddReducer } from 'transactionsRedux/transactionsGlobalSlice';
+import { transactionsApi } from 'transactionsRedux/transactionsOperations';
 
 const persistConfig = {
   key: 'auth',
@@ -27,6 +29,8 @@ export const store = configureStore({
     transactions: transactionReduser,
     auth: persistedReducer,
     global: globalReducer,
+    globalAdd: globalAddReducer,
+    [transactionsApi.reducerPath]: transactionsApi.reducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -34,6 +38,7 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+    transactionsApi.middleware,
   ],
 });
 export const persistor = persistStore(store);

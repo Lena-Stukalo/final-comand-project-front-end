@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import css from './TansactionSwitcher.module.css';
 
 import sprite from '../../../transactionsComponentIcons/sprite.svg';
 import { switchersOptions } from 'transactionsComponentConstants/constants';
@@ -22,7 +23,7 @@ function TransactionSwitcher({ check }) {
         type="checkbox"
         checked={checked}
         onChange={handleChange}
-        className="visually-hidden"
+        className={css.visuallyHidden}
       />
       <Switch>
         <Svg checked={checked}>

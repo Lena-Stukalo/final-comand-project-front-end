@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const transactionsGlobalSlice = createSlice({
-  name: 'global',
+  name: 'globalAdd',
   initialState,
   reducers: {
     openModalLogout: (state, _) => {
@@ -27,6 +27,7 @@ const transactionsGlobalSlice = createSlice({
     },
     addTransactionSuccess: (state, _) => {
       state.isNewTransaction = false;
+      state.isModalAddTransactionOpen = false;
     },
     reloadTransactionList: (state, _) => {
       state.isNewTransaction = false;
@@ -43,4 +44,4 @@ export const {
   reloadTransactionList,
 } = transactionsGlobalSlice.actions;
 
-export const globalReducer = transactionsGlobalSlice.reducer;
+export const globalAddReducer = transactionsGlobalSlice.reducer;

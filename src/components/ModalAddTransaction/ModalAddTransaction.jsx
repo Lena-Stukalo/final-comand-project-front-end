@@ -47,6 +47,11 @@ export default function ModalAddTransactions() {
     const transactionType = checked
       ? transactionsTypeIncome
       : transactionsTypeExpense;
+    console.log(transactionType);
+    if (transactionType === 'income') {
+      const income = 'Income';
+      setCategory(income);
+    }
     e.preventDefault();
     addTransactions({
       category,

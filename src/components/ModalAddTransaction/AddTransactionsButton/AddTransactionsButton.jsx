@@ -17,9 +17,9 @@ export default function AddTransactionsButton() {
 }
 
 const Button = styled.button`
-  position: sticky;
-  float: right;
-  bottom: 20px;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
