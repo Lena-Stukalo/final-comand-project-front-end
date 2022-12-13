@@ -19,7 +19,6 @@ export const StatisticContainer = () => {
       dispatch(operations.statistic(params));
     }
     if (year !== '') {
-      console.log(year);
       const params = {
         year: year,
       };

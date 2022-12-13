@@ -36,7 +36,6 @@ export default function ModalAddTransactions() {
   };
   const onChangeDate = date => {
     const formatDate = date.toLocaleString().slice(0, 10);
-    console.log(formatDate);
     setDate(formatDate);
   };
 
@@ -52,7 +51,6 @@ export default function ModalAddTransactions() {
     const transactionType = checked
       ? transactionsTypeIncome
       : transactionsTypeExpense;
-    console.log(transactionType);
     if (transactionType === 'income') {
       const income = 'Income';
       setCategory(income);
