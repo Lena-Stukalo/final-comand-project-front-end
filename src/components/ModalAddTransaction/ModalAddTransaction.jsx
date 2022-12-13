@@ -34,6 +34,11 @@ export default function ModalAddTransactions() {
     setChecked(e);
     e ? setCategory(transactionsTypeIncome) : setCategory(expense);
   };
+  const onChangeDate = date => {
+    const formatDate = date.toLocaleString().slice(0, 10);
+    console.log(formatDate);
+    setDate(formatDate);
+  };
 
   useEffect(() => {
     if (data?.code === 201) {
@@ -95,7 +100,9 @@ export default function ModalAddTransactions() {
                 closeOnSelect={true}
                 dateFormat={'DD.MM.YYYY'}
                 value={date}
-                onChange={date => setDate(date?._d)}
+                onChange={date => {
+                  onChangeDate(date?._d);
+                }}
               />
               <svg>
                 <use href={`${sprite}#icon-calendar`} />
