@@ -36,7 +36,7 @@ const Header = () => {
               <LogoutSvg />
               <Media
                 query="(min-width: 768px)"
-                render={() => <p className={css.user_nav_item}>Exit</p>}
+                render={() => <p className={`${css.exit_nav_item}`}>Exit</p>}
               />
             </button>
           </div>
