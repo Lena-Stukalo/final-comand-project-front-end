@@ -19,27 +19,12 @@ const Calendar = ({ setMonthAmount, setYearAmount }) => {
     setMonth(false);
   };
   const onMounthCange = e => {
-    const months = [
-      { name: 'Jan', number: '01' },
-      { name: 'Feb', number: '02' },
-      { name: 'Mar', number: '03' },
-      { name: 'Apr', number: '04' },
-      { name: 'May', number: '05' },
-      { name: 'Jun', number: '06' },
-      { name: 'Jul', number: '07' },
-      { name: 'Aug', number: '08' },
-      { name: 'Sep', number: '09' },
-      { name: 'Oct', number: '10' },
-      { name: 'Nov', number: '11' },
-      { name: 'Dec', number: '12' },
-    ];
-    const choosenOne = e._d.toString().slice(4, 7);
-    const number = months.find(month => month.name === choosenOne);
-    setMonthAmount(number.number);
+    const choosenOne = e._d.getMonth() + 1;
+    setMonthAmount(choosenOne.toString());
   };
 
   const onYearChange = e => {
-    const choosenOne = e._d.toString().slice(11, 15);
+    const choosenOne = e._d.getFullYear().toString();
     setYearAmount(choosenOne);
   };
 
