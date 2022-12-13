@@ -31,9 +31,7 @@ function TransactionSwitcher({ check }) {
           {!checked && <use href={`${sprite}#icon-expense`} />}
         </Svg>
       </Switch>
-      <Span color={checked ? '#E0E0E0' : '#ff6596'}>
-        {switchersOptions.expense}
-      </Span>
+      <Span color={checked ? '#E0E0E0' : '#ff6596'}>{'Expense'}</Span>
     </Wrapper>
   );
 }

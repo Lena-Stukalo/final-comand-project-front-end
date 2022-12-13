@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import css from './Login.module.css';
 
 import Logo from '../../Logo/Logo';
-import { AiFillMail, AiFillLock } from 'react-icons/ai';
 
 import FormBtn from '../FromBtn/FormBtn';
 import FormBtnLink from '../FromBtn/FormBtnLink';
@@ -39,7 +38,6 @@ const LoginForm = ({ onSubmit }) => {
     validationSchema: validationSchema,
 
     onSubmit: values => {
-      console.log(values);
       setState(values);
 
       onSubmit(values);
@@ -52,7 +50,6 @@ const LoginForm = ({ onSubmit }) => {
       <form onSubmit={formik.handleSubmit} className={css.form}>
         <EmailInput
           label="E-mail"
-          icon={AiFillMail}
           mb={40}
           id="email"
           value={formik.values.email}
@@ -63,7 +60,6 @@ const LoginForm = ({ onSubmit }) => {
         />
         <PasswordInput
           label={'Password'}
-          icon={AiFillLock}
           mb={40}
           id={'password'}
           value={formik.values.password}

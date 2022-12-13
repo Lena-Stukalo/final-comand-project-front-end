@@ -38,7 +38,6 @@ export default function ModalAddTransactions() {
   };
   const onChangeDate = date => {
     const formatDate = date.toLocaleString().slice(0, 10);
-    console.log(formatDate);
     setDate(formatDate);
   };
 
@@ -54,7 +53,6 @@ export default function ModalAddTransactions() {
     const transactionType = checked
       ? transactionsTypeIncome
       : transactionsTypeExpense;
-    console.log(transactionType);
     if (transactionType === 'income') {
       const income = 'Income';
       setCategory(income);
@@ -71,6 +69,10 @@ export default function ModalAddTransactions() {
     );
     dispatch(setBalance(Number(res.payload.balance)));
     console.log(res);
+  };
+  const isValidData = data => {
+    const currentDate = new Date();
+    return currentDate > data._d;
   };
 
   return (
@@ -109,6 +111,7 @@ export default function ModalAddTransactions() {
                 onChange={date => {
                   onChangeDate(date?._d);
                 }}
+                isValidDate={isValidData}
               />
               <svg>
                 <use href={`${sprite}#icon-calendar`} />

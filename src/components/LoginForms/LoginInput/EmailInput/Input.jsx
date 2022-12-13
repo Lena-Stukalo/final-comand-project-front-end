@@ -1,6 +1,7 @@
 import InputAdornment from '@mui/material/InputAdornment';
 import { InputForm, InputLabelForm } from './Input.styles';
 import { FormHelperText } from '@mui/material';
+import { ReactComponent as EmailIcon } from '../../../../images/envelop-icon.svg';
 
 const Input = ({
   icon = null,
@@ -26,7 +27,9 @@ const Input = ({
         error={error}
         placeholder={label}
         startAdornment={
-          <InputAdornment position="start">{icon && icon()}</InputAdornment>
+          <InputAdornment position="start">
+            {icon ? icon : <EmailIcon />}
+          </InputAdornment>
         }
       />
       {error && (

@@ -6,6 +6,7 @@ import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
 import IconButton from '@mui/material/IconButton';
 
+
 export const ButtonRegistr = styled(Button)({
   width: '300px',
   backgroundColor: '#24CCA7',
