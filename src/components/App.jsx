@@ -1,9 +1,17 @@
+// export const App = () => {
+//   const showTransactionModalOpen = useSelector(selectIsModalAddTransactionOpen);
+//   return (
+//     <>
+//       <RegisterContainer />
+//       <Header />
+//       <AddTransactionsButton />
+//       {showTransactionModalOpen && <ModalAddTransaction />}
+//     </>
+
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import RegisterPage from 'pages/RegisterPage';
-import Header from './Header';
-import { Dashboard } from './dashbord/Dashboard';
 import PrivatRoute from './PrivatRoute';
 import PublicRoute from './PublicRoute';
 import { Currency } from './currency/Currency';

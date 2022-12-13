@@ -14,7 +14,7 @@ const StyledBtn = styled.button`
   height: ${props => props.height || '50px'};
   border-radius: 20px;
   padding: 13px 65px 13px 71px;
-  font-family: Circle;
+  font-family: 'Circe, Manrope, sans-serif';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+// import { store } from 'transactionsRedux/transactionsStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { App } from 'components/App';
 import './index.css';
