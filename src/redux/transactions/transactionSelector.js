@@ -26,11 +26,13 @@ const getFilteredTransactions = state => {
   const regExNoDots = /[^\d]/g;
   const data = [...state.transactions.data];
 
-  const result = data.sort(
-    (firstEl, secondEl) =>
-      secondEl.createdAt.slice(11).substring(0, 8).replace(regExNoDots, '') -
-      firstEl.createdAt.slice(11).substring(0, 8).replace(regExNoDots, '')
-  );
+  const result = data.sort((firstEl, secondEl) => {
+    console.log(secondEl.createdAt.substring(0, 19).replace(regExNoDots, ''));
+    return (
+      secondEl.createdAt.substring(0, 19).replace(regExNoDots, '') -
+      firstEl.createdAt.substring(0, 19).replace(regExNoDots, '')
+    );
+  });
 
   return result;
 };
