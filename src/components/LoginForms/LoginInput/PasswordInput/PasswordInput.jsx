@@ -6,6 +6,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { FormHelperText } from '@mui/material';
+import { ReactComponent as LockIcon } from '../../../../images/lock-icon.svg';
 
 import { IconColorButtom, InputLabelForm } from './PasswordInput.js';
 
@@ -52,7 +53,9 @@ const PasswordInput = ({
         error={error}
         placeholder={label}
         startAdornment={
-          <InputAdornment position="start">{icon && icon()}</InputAdornment>
+          <InputAdornment position="start">
+            {icon ? icon : <LockIcon />}
+          </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
