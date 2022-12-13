@@ -31,6 +31,9 @@ const HomeTabTable = ({ data }) => {
         </THead>
         <Tbody>
           {data.map((item, index) => {
+            if (index === 0 && !item.isIncome) {
+              console.log(item);
+            }
             // console.log(item.isIncome);
             // if (index === 0 && !item.isIncome) {
             //   console.log('lox');
