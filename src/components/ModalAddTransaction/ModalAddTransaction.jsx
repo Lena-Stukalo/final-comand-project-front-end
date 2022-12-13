@@ -66,6 +66,10 @@ export default function ModalAddTransactions() {
       isIncome: transactionType === transactionsTypeIncome ? true : false,
     });
   };
+  const isValidData = data => {
+    const currentDate = new Date();
+    return currentDate > data._d;
+  };
 
   return (
     <Modal>
@@ -103,6 +107,7 @@ export default function ModalAddTransactions() {
                 onChange={date => {
                   onChangeDate(date?._d);
                 }}
+                isValidDate={isValidData}
               />
               <svg>
                 <use href={`${sprite}#icon-calendar`} />

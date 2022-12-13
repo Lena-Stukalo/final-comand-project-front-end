@@ -32,6 +32,10 @@ const Calendar = ({ setMonthAmount, setYearAmount }) => {
     const choosenOne = e._d.getFullYear().toString();
     setYearAmount(choosenOne);
   };
+  const isValidData = data => {
+    const currentDate = new Date();
+    return currentDate > data._d;
+  };
 
   const toggleCalendar = e => {
     const classTable = e.target.getAttribute('class');
@@ -59,6 +63,7 @@ const Calendar = ({ setMonthAmount, setYearAmount }) => {
             timeFormat={false}
             dateFormat="MM"
             onChange={onMounthCange}
+            isValidDate={isValidData}
           />
         )}
       </div>
@@ -79,6 +84,7 @@ const Calendar = ({ setMonthAmount, setYearAmount }) => {
             dateFormat="YYYY"
             timeFormat={false}
             onChange={onYearChange}
+            isValidDate={isValidData}
           />
         )}
       </div>
