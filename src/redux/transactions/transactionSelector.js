@@ -27,7 +27,6 @@ const getFilteredTransactions = state => {
   const data = [...state.transactions.data];
 
   const result = data.sort((firstEl, secondEl) => {
-    console.log(secondEl.createdAt.substring(0, 19).replace(regExNoDots, ''));
     return (
       secondEl.createdAt.substring(0, 19).replace(regExNoDots, '') -
       firstEl.createdAt.substring(0, 19).replace(regExNoDots, '')
