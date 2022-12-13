@@ -38,7 +38,6 @@ const LoginForm = ({ onSubmit }) => {
     validationSchema: validationSchema,
 
     onSubmit: values => {
-      console.log(values);
       setState(values);
 
       onSubmit(values);

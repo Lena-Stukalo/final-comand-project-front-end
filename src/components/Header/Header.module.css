@@ -37,6 +37,17 @@
   font-size: 18px;
   line-height: 32px;
 }
+.exit_nav_item {
+  font-family: 'Circe';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  margin-left: 8px;
+  margin-top: 2px;
+}
+.exit_nav_item:hover {
+  color: inherit;
+}
 
 /* .user_nav_item:last-child {
   margin-left: 8px;
@@ -44,13 +55,12 @@
 
 .button_exit {
   display: inline-flex;
+
+  justify-content: space-between;
   align-items: center;
 
-  /* justify-content: center; */
-  /* align-items: center; */
-
-  text-align: center;
-
+  /* text-align: center; */
+  color: #bdbdbd;
   cursor: pointer;
   border: 0;
   background-color: inherit;
@@ -97,6 +107,7 @@
 
   .button_exit {
     margin-left: 12px;
+    color: #bdbdbd;
   }
 
   /* .button_exit .user_nav_item {
@@ -105,6 +116,9 @@
 
   .button_exit::before {
     display: block;
+  }
+  .button_exit:hover {
+    color: #ff6596;
   }
 }
 

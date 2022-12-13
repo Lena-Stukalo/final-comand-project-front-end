@@ -6,6 +6,7 @@ export const ExitModal = styled.div`
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
+  backdrop-filter: blur(10px);
   top: 0;
   left: 0;
   display: flex;
