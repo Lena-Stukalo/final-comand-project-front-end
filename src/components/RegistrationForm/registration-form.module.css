@@ -26,13 +26,15 @@
   width: 90%;
   height: 24px;
   border: none;
+  border-bottom: 1px solid #bdbdbd;
 }
 
 .form__error {
   width: 90%;
   padding: 5px 0px 5px 30px;
   height: 24px;
-  border: 1px solid red;
+  border: none;
+  border-bottom: 1px solid red;
 }
 
 input:invalid {
@@ -53,7 +55,6 @@ input:invalid {
 .form__label {
   display: block;
   position: relative;
-  border-bottom: 1px solid #bdbdbd;
 }
 
 .form__label:not(:last-child) {
@@ -62,9 +63,20 @@ input:invalid {
 
 .icon {
   position: absolute;
-  bottom: 5px;
+  /* bottom: 5px; */
 }
-
+.progresbarWraper {
+  margin-top: 5px;
+  height: 5px;
+  background-color: #e5f1ef;
+  border-radius: 4px;
+  width: 100%;
+}
+.progresbar {
+  height: 5px;
+  /* background-color: #24cca7; */
+  border-radius: 4px;
+}
 .register__button {
   margin-bottom: 20px;
   margin-top: 40px;

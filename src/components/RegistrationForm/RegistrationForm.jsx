@@ -10,6 +10,7 @@ import { ReactComponent as WalletIcon } from '../../images/wallet-icon.svg';
 import { ReactComponent as EmailIcon } from '../../images/envelop-icon.svg';
 import { ReactComponent as LockIcon } from '../../images/lock-icon.svg';
 import { ReactComponent as AccountIcon } from '../../images/account-icon.svg';
+import { style } from '@mui/system';
 
 const RegistrationForm = ({ onSubmit }) => {
   const { state, setState } = useForm({ initialState, onSubmit });
@@ -25,6 +26,18 @@ const RegistrationForm = ({ onSubmit }) => {
       onSubmit(values);
     },
   });
+  const ProgressBarStyles = () => {
+    if (formik.values.password.length >= 6) {
+      return {
+        width: `${(formik.values.password.length / 16) * 100}%`,
+        backgroundColor: `#24CCA7`,
+      };
+    }
+    return {
+      width: `${(formik.values.password.length / 16) * 100}%`,
+      backgroundColor: `#FF6596`,
+    };
+  };
 
   return (
     <div className={styles.form__container}>
@@ -92,6 +105,12 @@ const RegistrationForm = ({ onSubmit }) => {
                 : styles.form__input
             }`}
           />
+          <div className={styles.progresbarWraper}>
+            <div
+              className={styles.progresbar}
+              style={ProgressBarStyles()}
+            ></div>
+          </div>
         </label>
         {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
           <div className={styles.error}>{formik.errors.confirmPassword}</div>
