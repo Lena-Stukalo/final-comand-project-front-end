@@ -1,6 +1,6 @@
 const switchersOptions = {
   income: 'Income',
-  expense: 'Expense',
+  expense: 'Other expenses',
   transactionsTypeIncome: 'income',
   transactionsTypeExpense: 'expense',
 };
