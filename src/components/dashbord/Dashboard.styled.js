@@ -3,7 +3,17 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const DashboardContainer = styled.div`
+  height: 600px;
+  /* @media screen and (max-width: 767px) {
+    height: 600px;
+  } */
+  @media screen and (min-width: 768px) {
+    height: 60vw;
+  }
+
   @media screen and (min-width: 1280px) {
+    height: 50vw;
+
     display: flex;
 
     justify-content: space-between;
