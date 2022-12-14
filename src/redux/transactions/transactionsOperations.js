@@ -43,7 +43,6 @@ const fetchTransactions = createAsyncThunk(
   async () => {
     try {
       const { data } = await axios.get('/transactions');
-      // console.log(data);
       return data;
     } catch ({ response }) {
       Notify.failure(`${response.status}: ${response.data.message}`);
