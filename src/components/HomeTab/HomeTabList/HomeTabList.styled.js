@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-const color = p => {
-  console.log(p);
-};
-
 export const TransactionsList = styled.ul`
   width: 280px;
 

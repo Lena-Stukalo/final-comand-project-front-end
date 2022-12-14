@@ -5,6 +5,8 @@ const getError = state => state.transactions.error;
 const getDetailsIncome = state => state.transactions.details.totalIncome;
 const getDetailsExpense = state => state.transactions.details.totalExpense;
 const getTransactions = state => state.transactions.data;
+const getIsAddTransactionModalOpen = state =>
+  state.transactions.isAddTransactionModalOpen;
 // const getFilteredTransactions = state => {
 //   const regExNoDots = /[^\d]/g;
 
@@ -44,5 +46,6 @@ const TransSelectors = {
   getDetailsIncome,
   getTransactions,
   getFilteredTransactions,
+  getIsAddTransactionModalOpen,
 };
 export default TransSelectors;

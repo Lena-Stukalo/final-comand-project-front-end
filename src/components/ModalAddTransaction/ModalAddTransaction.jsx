@@ -68,7 +68,6 @@ export default function ModalAddTransactions() {
       })
     );
     dispatch(setBalance(Number(res.payload.balance)));
-    console.log(res);
   };
   const isValidData = data => {
     const currentDate = new Date();

@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 import { openModalAddTransaction } from 'transactionsRedux/transactionsGlobalSlice';
 import sprite from '../../../transactionsComponentIcons/sprite.svg';
+import { toggleAddModal } from 'redux/transactions/transactionSlice';
 
 export default function AddTransactionsButton() {
   const dispatch = useDispatch();
 
   return (
-    <Button onClick={() => dispatch(openModalAddTransaction())}>
+    <Button onClick={() => dispatch(toggleAddModal())}>
       <svg width={20} height={20}>
         <use href={`${sprite}#icon-income`} />
       </svg>

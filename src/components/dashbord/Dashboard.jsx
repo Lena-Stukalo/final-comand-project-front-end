@@ -16,9 +16,9 @@ import {
   NavItem,
   DashboardContainer,
 } from './Dashboard.styled';
-
+import { getIsAddTransactionModalOpen } from '../../redux/transactions/transactionSelector';
 import NavigationAndBalance from './NavigationAndBalance';
-import { selectIsModalAddTransactionOpen } from 'transactionsRedux/transactionsGlobalSelectors';
+import TransSelectors from '../../redux/transactions/transactionSelector';
 
 import { navigation } from './navigationItems';
 
@@ -29,7 +29,9 @@ export const Dashboard = () => {
     dispath(operations.fetchTransactions());
   }, [dispath]);
 
-  const showTransactionModalOpen = useSelector(selectIsModalAddTransactionOpen);
+  const showTransactionModalOpen = useSelector(
+    TransSelectors.getIsAddTransactionModalOpen
+  );
   return (
     <DashboardContainer>
       <Container>
