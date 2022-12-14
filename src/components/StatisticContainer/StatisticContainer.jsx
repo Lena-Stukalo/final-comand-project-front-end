@@ -11,19 +11,26 @@ export const StatisticContainer = () => {
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
   useEffect(() => {
-    if (month !== '') {
+    if (month !== '' && year !== '') {
       const params = {
-        month: month,
-        year: '2022',
+        month,
+        year,
       };
       dispatch(operations.statistic(params));
     }
-    if (year !== '') {
-      const params = {
-        year: year,
-      };
-      dispatch(operations.statistic(params));
-    }
+    // if (month !== '') {
+    //   const params = {
+    //     month: month,
+    //     year: '2022',
+    //   };
+    //   dispatch(operations.statistic(params));
+    // }
+    // if (year !== '') {
+    //   const params = {
+    //     year: year,
+    //   };
+    //   dispatch(operations.statistic(params));
+    // }
   }, [month, year]);
 
   const dispatch = useDispatch();
@@ -58,7 +65,7 @@ export const StatisticContainer = () => {
   return (
     <div className={css.container}>
       <Diagram statistic={MakeStatistic(categories, details)} />
-      <div>
+      <div className={css.tableContainer}>
         <Calendar setMonthAmount={setMonth} setYearAmount={setYear} />
         <StatisticsTable statistic={MakeStatistic(categories, details)} />
       </div>

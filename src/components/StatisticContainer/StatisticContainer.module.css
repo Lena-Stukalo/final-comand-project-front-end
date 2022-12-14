@@ -1,6 +1,9 @@
 @media screen and (min-width: 768px) {
   .container {
     display: flex;
-    padding: 30px;
+    justify-content: space-between;
+  }
+  .tableContainer {
+    margin-right: 15px;
   }
 }

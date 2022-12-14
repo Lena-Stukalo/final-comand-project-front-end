@@ -26,6 +26,12 @@
 
     color: #000000;
   }
+  .datetime {
+    position: absolute;
+  }
+  .wrappCalendar {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -34,6 +40,7 @@
     max-width: 336px;
     margin-bottom: 20px;
     display: flex;
+    position: relative;
   }
   .wrapperMonth {
     width: 160px;
@@ -44,10 +51,8 @@
     margin-top: 0;
     margin-left: 16px;
   }
-
-  .datetimeYear {
-    margin-top: 15px;
-    margin-left: 32px;
+  .datetime {
+    position: absolute;
   }
 }
 
@@ -66,11 +71,6 @@
 
   .wrapperYear {
     margin-top: 0;
-    margin-left: 32px;
-  }
-
-  .datetimeYear {
-    margin-top: 15px;
     margin-left: 32px;
   }
 }
