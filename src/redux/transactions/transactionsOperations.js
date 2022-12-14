@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 axios.defaults.baseURL =
   'https://final-comand-project-back-end-production.up.railway.app/api';
 
@@ -50,9 +51,22 @@ const fetchTransactions = createAsyncThunk(
   }
 );
 
+const addTransactions = createAsyncThunk(
+  'transactions/add',
+  async credentials => {
+    try {
+      const { data } = await axios.post('/transactions', credentials);
+      return data;
+    } catch ({ response }) {
+      Notify.failure(`${response.status}: ${response.data.message}`);
+    }
+  }
+);
+
 const operations = {
   statistic,
   categories,
   fetchTransactions,
+  addTransactions,
 };
 export default operations;

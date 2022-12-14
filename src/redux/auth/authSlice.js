@@ -10,6 +10,13 @@ const initialState = {
 const authSlice = createSlice({
   name: 'auth',
   initialState,
+
+  reducers: {
+    setBalance(state, action) {
+      state.user.balance = action.payload;
+    },
+  },
+
   extraReducers: {
     [authOperation.register.fulfilled](state, action) {
       state.user = action.payload.user;
@@ -49,4 +56,6 @@ const authSlice = createSlice({
     },
   },
 });
+export const { setBalance } = authSlice.actions;
+
 export default authSlice.reducer;

@@ -17,6 +17,8 @@ import TransactionSwitcher from './TransactionSwitcher/TransactionSwitcher';
 import Modal from './Modal/Modal';
 import { switchersOptions } from 'transactionsComponentConstants/constants';
 import sprite from '../../transactionsComponentIcons/sprite.svg';
+import operations from 'redux/transactions/transactionsOperations';
+import { setBalance } from 'redux/auth/authSlice';
 
 const { transactionsTypeIncome, transactionsTypeExpense, expense } =
   switchersOptions;
@@ -27,7 +29,7 @@ export default function ModalAddTransactions() {
   const [date, setDate] = useState(new Date().toLocaleDateString());
   const [sum, setSum] = useState();
   const [comment, setComment] = useState('');
-  const [addTransactions, { data }] = useAddTransactionsMutation();
+  // const [addTransactions, { data }] = useAddTransactionsMutation();
   const [category, setCategory] = useState(expense);
 
   const toggleChange = e => {
@@ -39,15 +41,15 @@ export default function ModalAddTransactions() {
     setDate(formatDate);
   };
 
-  useEffect(() => {
-    if (data?.code === 201) {
-      NotifyContainer(toast(data?.payload?.message || 'Done!'));
-      dispatch(addTransactionSuccess());
-      dispatch(closeModalWindow());
-    }
-  }, [data, dispatch]);
+  // useEffect(() => {
+  //   if (data?.code === 201) {
+  //     NotifyContainer(toast(data?.payload?.message || 'Done!'));
+  //     dispatch(addTransactionSuccess());
+  //     dispatch(closeModalWindow());
+  //   }
+  // }, [data, dispatch]);
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     const transactionType = checked
       ? transactionsTypeIncome
       : transactionsTypeExpense;
@@ -56,13 +58,17 @@ export default function ModalAddTransactions() {
       setCategory(income);
     }
     e.preventDefault();
-    addTransactions({
-      category,
-      comment,
-      sum,
-      date,
-      isIncome: transactionType === transactionsTypeIncome ? true : false,
-    });
+    const res = await dispatch(
+      operations.addTransactions({
+        category,
+        comment,
+        sum,
+        date,
+        isIncome: transactionType === transactionsTypeIncome ? true : false,
+      })
+    );
+    dispatch(setBalance(Number(res.payload.balance)));
+    console.log(res);
   };
   const isValidData = data => {
     const currentDate = new Date();
@@ -74,7 +80,7 @@ export default function ModalAddTransactions() {
       <div>
         <Title>Add transaction</Title>
         <Form onSubmit={handleSubmit}>
-          <label border>
+          <label border="true">
             <TransactionSwitcher check={toggleChange} />
           </label>
           {!checked && (

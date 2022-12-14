@@ -46,6 +46,19 @@ const transactionsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    [operations.addTransactions.pending](state) {
+      state.error = false;
+      state.isLoading = true;
+    },
+    [operations.addTransactions.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = false;
+      state.data = [action.payload, ...state.data];
+    },
+    [operations.addTransactions.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 export default transactionsSlice.reducer;
