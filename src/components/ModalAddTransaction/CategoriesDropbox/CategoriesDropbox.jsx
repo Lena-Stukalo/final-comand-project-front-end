@@ -6,7 +6,7 @@ import {
   statisticsColors,
   switchersOptions,
 } from 'transactionsComponentConstants/constants';
-import sprite from '../../../transactionsComponentIcons/sprite.svg';
+import { AiOutlineDown } from 'react-icons/ai';
 
 function CategoriesDropbox({ select }) {
   const [selectOpened, setSelectOpened] = useState(false);
@@ -24,6 +24,15 @@ function CategoriesDropbox({ select }) {
     }
     select(e);
   };
+
+  const style = {
+    position: 'relative',
+    right: '0',
+    marginRight: '30px',
+    width: '18px',
+    height: '9px',
+  };
+
   return (
     <Div>
       <Wrapper>
@@ -32,9 +41,7 @@ function CategoriesDropbox({ select }) {
           type="button"
           onClick={() => setSelectOpened(prevCheck => !prevCheck)}
         >
-          <svg>
-            <use href={`${sprite}#icon-dropbox-select`} />
-          </svg>
+          <AiOutlineDown style={style} />
         </button>
       </Wrapper>
       {selectOpened && (
@@ -64,13 +71,6 @@ const Wrapper = styled.div`
   button {
     border: none;
     background: none;
-    svg {
-      position: relative;
-      right: 0;
-      margin-right: 30px;
-      width: 18px;
-      height: 9px;
-    }
   }
 `;
 const Div = styled.div`

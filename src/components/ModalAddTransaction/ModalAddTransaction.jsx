@@ -91,7 +91,6 @@ export default function ModalAddTransactions() {
           <ContainerStyle>
             <Label fontWeight={700}>
               <input
-                // type="number"
                 name="sum"
                 defaultValue={sum}
                 onChange={({ target }) => setSum(target.value)}
