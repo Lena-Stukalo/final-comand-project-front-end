@@ -19,7 +19,7 @@ import { switchersOptions } from 'transactionsComponentConstants/constants';
 import sprite from '../../transactionsComponentIcons/sprite.svg';
 import operations from 'redux/transactions/transactionsOperations';
 import { setBalance } from 'redux/auth/authSlice';
-
+import { toggleAddModal } from 'redux/transactions/transactionSlice';
 const { transactionsTypeIncome, transactionsTypeExpense, expense } =
   switchersOptions;
 
@@ -128,7 +128,7 @@ export default function ModalAddTransactions() {
           <Button primary type="submit">
             ADD
           </Button>
-          <Button outlined onClick={() => dispatch(closeModalWindow())}>
+          <Button outlined onClick={() => dispatch(toggleAddModal())}>
             CANCEL
           </Button>
         </Form>
