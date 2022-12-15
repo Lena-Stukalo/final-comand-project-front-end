@@ -65,3 +65,16 @@ table .noOverflow {
   white-space: normal;
   overflow: visible;
 }
+.rdt {
+  position: absolute;
+}
+@media screen and (min-width: 768px) {
+  .rdt {
+    right: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .rdt {
+    right: 60px;
+  }
+}

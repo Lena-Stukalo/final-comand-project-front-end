@@ -17,7 +17,7 @@ const RegisterPage = () => {
   };
 
   if (isLogin) {
-    return <Navigate to="/" />;
+    return <Navigate to="/home" />;
   }
 
   return (

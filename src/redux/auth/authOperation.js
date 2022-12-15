@@ -30,7 +30,6 @@ const login = createAsyncThunk('auth/login', async credentials => {
     token.set(data.token);
     return data;
   } catch ({ response }) {
-    console.log(response);
     Notify.failure(`${response.status}: ${response.data.message}`);
   }
 });

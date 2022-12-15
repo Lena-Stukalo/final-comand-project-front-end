@@ -6,6 +6,7 @@ import Media from 'react-media';
 import styled from 'styled-components';
 
 import { closeModalWindow } from 'transactionsRedux/transactionsGlobalSlice';
+import { toggleAddModal } from 'redux/transactions/transactionSlice';
 import Icon from '../Icon/Icon';
 
 const modalRoot = document.querySelector('#root-modal');
@@ -22,7 +23,7 @@ export default function Modal({
   const dispatch = useDispatch();
 
   const onModalClose = e => {
-    dispatch(closeModalWindow());
+    dispatch(toggleAddModal());
   };
 
   useEffect(() => {

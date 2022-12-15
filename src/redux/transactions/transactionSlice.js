@@ -8,6 +8,12 @@ const transactionsSlice = createSlice({
     details: [],
     isLoading: false,
     error: null,
+    isAddTransactionModalOpen: false,
+  },
+  reducers: {
+    toggleAddModal: (state, _) => {
+      state.isAddTransactionModalOpen = !state.isAddTransactionModalOpen;
+    },
   },
   extraReducers: {
     [operations.categories.pending](state) {
@@ -46,6 +52,21 @@ const transactionsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+    [operations.addTransactions.pending](state) {
+      state.error = false;
+      state.isLoading = true;
+    },
+    [operations.addTransactions.fulfilled](state, action) {
+      state.isLoading = false;
+      state.error = false;
+      state.isAddTransactionModalOpen = false;
+      state.data = [action.payload, ...state.data];
+    },
+    [operations.addTransactions.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 export default transactionsSlice.reducer;
+export const { toggleAddModal } = transactionsSlice.actions;

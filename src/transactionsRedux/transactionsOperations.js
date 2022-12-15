@@ -45,6 +45,6 @@ export const transactionsApi = createApi({
 
 export const {
   useGetTransactionsQuery,
-  useAddTransactionsMutation,
+  // useAddTransactionsMutation,
   useDeleteTransactionsMutation,
 } = transactionsApi;
