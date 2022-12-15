@@ -70,6 +70,11 @@ table .noOverflow {
 }
 @media screen and (min-width: 768px) {
   .rdt {
-    right: 10px;
+    right: 40px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .rdt {
+    right: 60px;
   }
 }
