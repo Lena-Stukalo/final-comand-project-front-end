@@ -1,13 +1,3 @@
-// export const App = () => {
-//   const showTransactionModalOpen = useSelector(selectIsModalAddTransactionOpen);
-//   return (
-//     <>
-//       <RegisterContainer />
-//       <Header />
-//       <AddTransactionsButton />
-//       {showTransactionModalOpen && <ModalAddTransaction />}
-//     </>
-
 import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +10,7 @@ import StatisticPage from 'pages/StatisticPage/StatisticPage';
 import LoginPage from 'pages/LoginPage';
 import operations from 'redux/auth/authOperation';
 import AuthSelectors from 'redux/auth/authSelectors';
-
+import { default as transOperations } from '../redux/transactions/transactionsOperations';
 import Layout from './Layout/Layout';
 import Spinner from './Spinner/Spinner';
 
@@ -31,6 +21,10 @@ export const App = () => {
   useEffect(() => {
     dispatch(operations.currentUser());
   }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(transOperations.categories());
+  }, []);
 
   return isRefreshing ? (
     <Spinner />
