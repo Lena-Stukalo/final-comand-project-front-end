@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../../api/auth';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 axios.defaults.baseURL =
-  'https://final-comand-project-back-end-production.up.railway.app/api';
+  'https://final-comand-project-back-end.onrender.com/api';
 
 const token = {
   set(token) {

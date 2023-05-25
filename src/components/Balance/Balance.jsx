@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import AuthSelectors from 'redux/auth/authSelectors';
 import { getBalanceByTransactionsSelector } from 'redux/selectors';
